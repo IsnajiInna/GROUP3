@@ -3,31 +3,707 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
+    <title>CCSIELS Admin Panel</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="assets/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="admindash_style.css">
+
 </head>
 <body>
-    <header>
-      <h1>Welcome to the  Admin Dashboard</h1>
-    </header>
-    <nav>
-      <ul>
-        <li>Home</li>
-        <li>Profile</li>
-        <li>Settings</li>
-        <li>Logout</li>
-      </ul>
-    </nav>
-    <div class="main">
-      <div class="card">
-        <h2>Dashboard Overview</h2>
-        <p>Dashboard for CCS Lending Equipment</p>
-      </div>
-      <div class="card">
-        <h2>Activity</h2>
-        <p>Recent user activity will appear here.</p>
-      </div>
-    </div>
-  </body>
-  </html>
+    <div class="dashboard-layout">
+        <!--            SIDEBAR               -->
+        <nav id="sidebar">
+            <div class="sidebar-header">
+                <h3>Admin Panel</h3>
+            </div>
+
+            <ul class="list-unstyled components">
+                <li class="active">
+                    <a href="#dashboard-view" class="sidebar-link">
+                        <i class="fas fa-tachometer-alt fa-fw me-2"></i>Dashboard
+                    </a>
+                </li>
+                <li>
+                    <a href="#manageEquipmentSubmenu" data-bs-toggle="collapse" aria-expanded="false" class=" sidebar-link">
+                        <i class="fas fa-tools fa-fw me-2"></i>Manage Equipment
+                    </a>
+                    <ul class="collapse list-unstyled" id="manageEquipmentSubmenu">
+                        <li><a href="#add-equipment-view" class="sidebar-link sub-link"><i class="fas fa-plus fa-fw me-2"></i>Add new Equipment</a></li>
+                        <li><a href="#view-equipment-view" class="sidebar-link sub-link"><i class="fas fa-edit fa-fw me-2"></i>View/Edit Equipment</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#borrowRequestSubmenu" data-bs-toggle="collapse" aria-expanded="false" class="sidebar-link">
+                        <i class="fas fa-clipboard-list fa-fw me-2"></i>Borrow Request
+                    </a>
+                    <ul class="collapse list-unstyled" id="borrowRequestSubmenu">
+                        <li><a href="#pending-requests-view" class="sidebar-link sub-link"><i class="fas fa-clock fa-fw me-2"></i>Pending approvals</a></li>
+                        <li><a href="#approved-requests-view" class="sidebar-link sub-link"><i class="fas fa-check-circle fa-fw me-2"></i>Approved</a></li>
+                        <li><a href="#rejected-requests-view" class="sidebar-link sub-link"><i class="fas fa-times-circle fa-fw me-2"></i>Rejected</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#borrowed-items-view" class="sidebar-link">
+                        <i class="fas fa-box-open fa-fw me-2"></i>Borrowed Items
+                    </a>
+                </li>
+                <li>
+                    <a href="#user-management-view" class="sidebar-link">
+                        <i class="fas fa-users-cog fa-fw me-2"></i>User Management
+                    </a>
+                </li>
+                <!-- <li>
+                    <a href="#reports-view" class="sidebar-link">
+                        <i class="fas fa-chart-bar fa-fw me-2"></i>Reports
+                    </a>
+                </li> -->
+            </ul>
+
+            <ul class="list-unstyled bottom-links">
+                <li>
+                    <a href="#settings-view" class="sidebar-link">
+                        <i class="fas fa-cog fa-fw me-2"></i>Settings
+                    </a>
+                </li>
+                <li>
+                    <a href="#index.html" id="logout-link" class="sidebar-link">
+                        <i class="fas fa-sign-out-alt fa-fw me-2"></i>Log out
+                    </a>
+                </li>
+            </ul>
+        </nav>
+       
+        <!--        CONTENT WRAPPER           -->
+   
+        <div id="content-wrapper">
+            <!-- Top Navbar -->
+            <nav id="top-navbar" class="navbar navbar-expand-lg navbar-light bg-white">
+                <div class="container-fluid">
+                     <!-- Mobile Sidebar Toggle -->
+                     <button type="button" id="sidebarCollapse" class="btn btn-light d-lg-none me-3">
+                        <i class="fas fa-align-left"></i>
+                    </button>
+                    <a class="navbar-brand fw-bold" href="#dashboard-view">CCSIELS</a>
+                    <div class="ms-auto d-flex align-items-center">
+                        <!-- Search Bar -->
+                        <form class="d-none d-md-flex me-3" role="search">
+                            <div class="input-group input-group-sm">
+                                <span class="input-group-text bg-light border-end-0" id="basic-addon1"><i class="fas fa-search"></i></span>
+                                <input class="form-control form-control-sm border-start-0" type="search" placeholder="Search" aria-label="Search" aria-describedby="basic-addon1">
+                            </div>
+                        </form>
+                        <!-- Notification Bell -->
+                        <div class="nav-item me-3">
+                             <a class="nav-link position-relative" href="#" title="Notifications">
+                                <i class="fas fa-bell fs-5 text-secondary"></i>
+                             </a>
+                        </div>
+
+                        <!-- Admin Avatar Dropdown -->
+                        <div class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <img src="userprof.jpg" alt="Admin Avatar" class="rounded-circle me-2" width="30" height="30">
+                                Admin Test
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                                <li><a class="dropdown-item" href="#settings-view"><i class="fas fa-cog fa-fw me-2"></i>Settings</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#" id="logout-link-top"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!--        MAIN CONTENT AREA         -->
+            <main id="main-content" class="p-3 p-md-4">
+
+                <!-- DASHBOARD VIEW -->
+                <div id="dashboard-view" class="main-view">
+                    <h1 class="h3 mb-4">Welcome, Admin!</h1>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card dashboard-card bg-primary text-white h-100">
+                                <div class="card-body d-flex align-items-center">
+                                    <i class="fas fa-box fa-3x me-3"></i>
+                                    <div>
+                                        <div class="fs-1 fw-bold">6</div>
+                                        <div class="text-uppercase small">Total Items</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card dashboard-card bg-success text-white h-100">
+                                <div class="card-body d-flex align-items-center">
+                                    <i class="fas fa-people-carry fa-3x me-3"></i>
+                                    <div>
+                                        <div class="fs-1 fw-bold">2</div>
+                                        <div class="text-uppercase small">Items Borrowed</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card dashboard-card bg-warning text-dark h-100">
+                                <div class="card-body d-flex align-items-center">
+                                    <i class="fas fa-clock fa-3x me-3"></i>
+                                    <div>
+                                        <div class="fs-1 fw-bold">6</div>
+                                        <div class="text-uppercase small">Pending Requests</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 col-xl-3">
+                            <div class="card dashboard-card bg-secondary text-white h-100">
+                                <div class="card-body d-flex align-items-center">
+                                     <i class="fas fa-exclamation-circle fa-3x me-3"></i> 
+                                    <div>
+                                        <div class="fs-1 fw-bold">1</div>
+                                        <div class="text-uppercase small">Overdue</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recent Activity -->
+                    <div class="card content-panel mb-4">
+                        <div class="card-header">
+                           <h5 class="mb-0">Recent Activity</h5>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    User 'User Test' requested 'Projector A'.
+                                    <span class="text-muted small">April 19, 2025</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    Admin approved request #01.
+                                    <span class="text-muted small">April 16, 2025</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    New equipment 'Laptop Dell XPS 15' added.
+                                    <span class="text-muted small">April 11, 2025</span>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center">
+                                    User 'User Test' returned item #M01.
+                                    <span class="text-muted small">April 9, 2025</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="card content-panel">
+                         <div class="card-header">
+                           <h5 class="mb-0">Quick Actions: Latest Requests</h5>
+                        </div>
+                        <div class="card-body">
+                             <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
+                                <span>Request #123: Item #K01 (User Test)</span>
+                                <div class="btn-group btn-group-sm" role="group">
+                                    <button type="button" class="btn btn-danger" title="Reject"><i class="fas fa-times"></i></button>
+                                    <button type="button" class="btn btn-success" title="Approve"><i class="fas fa-check"></i></button>
+                                </div>
+                            </div>
+          
+                        </div>
+                    </div>
+
+                    <div class="background-logo"> 
+                        <!-- <img src="CCSLOGO-modified.png" alt="CCS Logo" class="logo-background"> -->
+                    </div>
+                </div>
+
+                <!-- add equipment -->
+                <div id="add-equipment-view" class="main-view" style="display: none;">
+                    <div class="card content-panel mx-auto" style="max-width: 600px;">
+                        <div class="card-body p-4 p-md-5">
+                            <h3 class="text-center mb-4 fw-bold form-title">Add new equipment</h3>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="itemName" class="form-label">Item name</label>
+                                    <input type="text" class="form-control" id="itemName" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemCategory" class="form-label">Category</label>
+                                    <select class="form-select" id="itemCategory" required>
+                                        <option selected disabled value="">Select Category</option>
+                                        <option value="laptop">Laptop</option>
+                                        <option value="projector">Projector</option>
+                                        <option value="cable">Cable</option>
+                                        <option value="mouse">Mouse</option>
+                                        <option value="keyboard">Keyboard</option>
+                                        <option value="ups">UPS</option>
+                                        <option value="other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemBrand" class="form-label">Brand/Model</label>
+                                    <input type="text" class="form-control" id="itemBrand">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemQuantity" class="form-label">Quantity Available</label>
+                                    <input type="number" class="form-control" id="itemQuantity" required min="0">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemSerial" class="form-label">Serial Code</label>
+                                    <input type="text" class="form-control" id="itemSerial">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemCode" class="form-label">Item code</label>
+                                    <input type="text" class="form-control" id="itemCode" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemCondition" class="form-label">Condition</label>
+                                     <select class="form-select" id="itemCondition" required>
+                                        <option selected disabled value="">Select Condition</option>
+                                        <option value="new">New</option>
+                                        <option value="good">Good</option>
+                                        <option value="fair">Fair</option>
+                                        <option value="poor">Poor</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="itemImage" class="form-label">Upload Image</label>
+                                    <input class="form-control" type="file" id="itemImage">
+                                </div>
+                                <div class="mb-4">
+                                    <label for="itemRemarks" class="form-label">Remarks/Notes</label>
+                                    <textarea class="form-control" id="itemRemarks" rows="3"></textarea>
+                                </div>
+                                <div class="d-grid">
+                                    <button type="submit" class="btn btn-success btn-lg fw-bold">Add Item</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- VIEW/EDIT EQUIPMENT -->
+                <div id="view-equipment-view" class="main-view" style="display: none;">
+                     <div class="card content-panel">
+                         <div class="card-body">
+                             <h3 class="text-center mb-4 fw-bold form-title">View & Edit Equipment</h3>
+                              <div class="mb-3">
+                                 <div class="input-group">
+                                     <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                     <input type="text" class="form-control" placeholder="Search equipment...">
+                                 </div>
+                             </div>
+                             <div class="table-responsive">
+                                 <table class="table table-hover align-middle">
+                                     <thead class="table-dark-green">
+                                         <tr>
+                                             <th>Item code and name</th>
+                                             <th>Category</th>
+                                             <th>Quantity</th>
+                                             <th>Status</th>
+                                             <th>Actions</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td>#L01 Lenovo Laptop</td>
+                                             <td>Laptop</td>
+                                             <td>3</td>
+                                             <td><span class="badge bg-success-light text-success">Available</span></td>
+                                             <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-trash me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                         <tr>
+                                             <td>#P01 Epson Projector</td>
+                                             <td>Projector</td>
+                                             <td>5</td>
+                                             <td><span class="badge bg-success-light text-success">Available</span></td>
+                                             <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-trash me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                         <tr>
+                                             <td>#C01 HDMI Cable</td>
+                                             <td>Cable</td>
+                                             <td>3</td>
+                                             <td><span class="badge bg-success-light text-success">Available</span></td>
+                                              <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-trash me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                          <tr>
+                                             <td>#M01 A4Tech Mouse</td>
+                                             <td>Mouse</td>
+                                             <td>2</td>
+                                             <td><span class="badge bg-danger-light text-danger">Borrowed</span></td>
+                                              <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-trash me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                         <tr>
+                                             <td>#K01 A4Tech Keyboard</td>
+                                             <td>Keyboard</td>
+                                             <td>3</td>
+                                              <td><span class="badge bg-success-light text-success">Available</span></td>
+                                              <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-trash me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                         <tr>
+                                             <td>#U01 APC UPS</td>
+                                             <td>UPS</td>
+                                             <td>2</td>
+                                              <td><span class="badge bg-success-light text-success">Available</span></td>
+                                              <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-trash me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                       
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+
+                <!-- PENDING REQUESTS -->
+                <div id="pending-requests-view" class="main-view" style="display: none;">
+                     <div class="card content-panel">
+                         <div class="card-body">
+                             <h3 class="text-center mb-4 fw-bold form-title">Pending Approvals</h3>
+                             <div class="table-responsive">
+                                 <table class="table table-hover align-middle">
+                                      <thead class="table-dark-green">
+                                         <tr>
+                                             <th>Student name</th>
+                                             <th>Item code & name</th>
+                                             <th>Date needed</th>
+                                             <th>Return date</th>
+                                             <th>Status</th>
+                                             <th>Actions</th>
+                                         </tr>
+                                     </thead>
+                                      <tbody>
+                                         <tr>
+                                             <td>Jelord Bojos</td>
+                                             <td>#L01 Lenovo Laptop</td>
+                                             <td>3/21/2025</td>
+                                             <td>3/24/2025</td>
+                                             <td><span class="badge bg-warning-light text-warning">Pending</span></td>
+                                             <td>
+                                                 <button class="btn btn-sm btn-success me-1" title="Approve"><i class="fas fa-check me-1"></i>Approve</button>
+                                                 <button class="btn btn-sm btn-danger" title="Reject"><i class="fas fa-times me-1"></i>Reject</button>
+                                             </td>
+                                         </tr>
+                                          <tr>
+                                             <td>Jelord Bojos</td>
+                                             <td>#M01 A4Tech Mouse</td>
+                                             <td>3/4/2025</td>
+                                             <td>3/6/2025</td>
+                                             <td><span class="badge bg-warning-light text-warning">Pending</span></td>
+                                             <td>
+                                                 <button class="btn btn-sm btn-success me-1" title="Approve"><i class="fas fa-check me-1"></i>Approve</button>
+                                                 <button class="btn btn-sm btn-danger" title="Reject"><i class="fas fa-times me-1"></i>Reject</button>
+                                             </td>
+                                         </tr>
+                                          
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+
+                <!-- APPROVED REQUESTs -->
+                 <div id="approved-requests-view" class="main-view" style="display: none;">
+                     <div class="card content-panel">
+                         <div class="card-body">
+                             <h3 class="text-center mb-4 fw-bold form-title">Approved</h3>
+                              <div class="table-responsive">
+                                 <table class="table table-hover align-middle">
+                                     <thead class="table-dark-green">
+                                         <tr>
+                                             <th>Student name</th>
+                                             <th>Item code & name</th>
+                                             <th>Date borrowed</th>
+                                             <th>Return date</th>
+                                             <th>Status</th>
+                                             
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                          <tr>
+                                             <td>Jelord Bojos</td>
+                                             <td>#K01 A4Tech Keyboard</td>
+                                             <td>2/28/2025</td>
+                                             <td>3/30/2025</td> 
+                                             <td><span class="badge bg-success-light text-success">Approved</span></td>
+                                         </tr>
+                                         <tr>
+                                            <td>Jelord Bojos</td>
+                                            <td>#M01 A4Tech Mouse</td>
+                                            <td>2/15/2025</td>
+                                            <td>2/20/2025</td> 
+                                            <td><span class="badge bg-danger-light text-danger">Overdue</span></td>
+                                        </tr>
+                                       
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+                <!-- REJECTED REQUESTS -->
+                <div id="rejected-requests-view" class="main-view" style="display: none;">
+                     <div class="card content-panel">
+                         <div class="card-body">
+                             <h3 class="text-center mb-4 fw-bold form-title">Rejected</h3>
+                              <div class="table-responsive">
+                                 <table class="table table-hover align-middle">
+                                     <thead class="table-dark-green">
+                                         <tr>
+                                             <th>Student name</th>
+                                             <th>Item code & name</th>
+                                             <th>Date Requested</th> 
+                                             <th>Requested Return Date</th> 
+                                             <th>Status</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td>Jelord Bojos</td>
+                                             <td>#C01 HDMI Cable</td>
+                                             <td>2/29/2025</td> 
+                                             <td>3/30/2025</td>
+                                             <td><span class="badge bg-danger-light text-danger">Rejected</span></td>
+                                         </tr>
+                                       
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+<!--     BORROWED ITEMS -->
+
+<div id="borrowed-items-view" class="main-view" style="display: none;">
+  <div class="card content-panel">
+      <div class="card-body">
+          <h3 class="text-center mb-4 fw-bold form-title">Borrowed Items</h3>
+
+          <div class="mb-3">
+              <div class="input-group">
+                  <span class="input-group-text"><i class="fas fa-search"></i></span>
+                  <input type="text" class="form-control" placeholder="Search equipment...">
+              </div>
+          </div>
+
+          <div class="table-responsive">
+              <table class="table table-hover align-middle">
+                  <thead class="table-dark-green">
+                      <tr>
+                          <th>Item Name</th>
+                          <th>Item Code</th>
+                          <th>Date Borrowed</th>
+                          <th>Return Date</th>
+                          <th>Status</th>
+                          <th>Returned/Action</th> 
+                      </tr>
+                  </thead>
+                  <tbody>
+              
+                      <tr>
+                          <td>123456</td>
+                          <td>dadsadd</td>
+                          <td>1/11/2050</td>
+                          <td>1/21/2234</td>
+                          <td><span class="badge bg-secondary-light text-secondary">Unknown</span></td> 
+                          <td>Complete</td>
+                      </tr>
+           
+                       <tr>
+                          <td>123456</td>
+                          <td>dadsadd</td>
+                          <td>1/11/2050</td>
+                          <td>1/21/2234</td>
+                          <td><span class="badge bg-secondary-light text-secondary">Unknown</span></td>
+                          <td>Complete</td>
+                      </tr>
+               
+                       <tr>
+                          <td>123456</td>
+                          <td>dadsadd</td>
+                          <td>1/11/2050</td>
+                          <td>1/21/2234</td>
+                          <td><span class="badge bg-secondary-light text-secondary">Unknown</span></td>
+                          <td>Complete</td>
+                      </tr>
+                 
+                       <tr>
+                          <td>123456</td>
+                          <td>dadsadd</td>
+                          <td>1/11/2050</td>
+                          <td>1/21/2234</td>
+                          <td><span class="badge bg-secondary-light text-secondary">Unknown</span></td>
+                          <td>Complete</td>
+                      </tr>
+                 
+                       <tr>
+                          <td>123456</td>
+                          <td>dadsadd</td>
+                          <td>1/11/2050</td>
+                          <td>1/21/2234</td>
+                          <td><span class="badge bg-secondary-light text-secondary">Unknown</span></td>
+                          <td>Complete</td>
+                      </tr>
+                
+                       <tr>
+                          <td>123456</td>
+                          <td>dadsadd</td>
+                          <td>1/11/2050</td>
+                          <td>1/21/2234</td>
+                          <td><span class="badge bg-secondary-light text-secondary">Unknown</span></td>
+                          <td>Complete</td>
+                      </tr>
+           
+                  </tbody>
+              </table>
+          </div>
+
+          
+          <nav aria-label="Borrowed items navigation" class="d-flex justify-content-end mt-3">
+              <ul class="pagination pagination-sm">
+                  <li class="page-item disabled">
+                      <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Prev</a>
+                  </li>
+                  <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a></li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                  <li class="page-item">
+                      <a class="page-link" href="#">Next</a>
+                  </li>
+              </ul>
+          </nav>
+
+      </div> 
+  </div> 
+</div>
+
+
+                <!-- USER MANAGEMENT -->
+                <div id="user-management-view" class="main-view" style="display: none;">
+                     <div class="card content-panel">
+                         <div class="card-body">
+                              <h3 class="text-center mb-4 fw-bold form-title">User Management</h3>
+                               <div class="mb-3">
+                                 <div class="input-group">
+                                     <span class="input-group-text"><i class="fas fa-search"></i></span>
+                                     <input type="text" class="form-control" placeholder="Search users...">
+                                 </div>
+                             </div>
+                              <div class="table-responsive">
+                                 <table class="table table-hover align-middle">
+                                     <thead class="table-dark-green">
+                                         <tr>
+                                             <th>Full Name</th>
+                                             <th>Email</th>
+                                             <th>Status</th>
+                                             <th>Actions</th>
+                                         </tr>
+                                     </thead>
+                                     <tbody>
+                                         <tr>
+                                             <td>Nurhana Aminulla</td>
+                                             <td>ae202401727@wmsu.edu.ph</td>
+                                             <td><span class="badge bg-success-light text-success">Active</span></td>
+                                             <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-user-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-info me-1" title="Deactivate"><i class="fas fa-user-slash me-1"></i>Deactivate</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-user-times me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                          <tr>
+                                             <td>Jelord Bojos</td>
+                                             <td>ae202401727@wmsu.edu.ph</td>
+                                             <td><span class="badge bg-success-light text-success">Active</span></td>
+                                             <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-user-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-info me-1" title="Deactivate"><i class="fas fa-user-slash me-1"></i>Deactivate</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-user-times me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                          <tr>
+                                             <td>Miko Zamora</td>
+                                             <td>ae202401727@wmsu.edu.ph</td>
+                                             <td><span class="badge bg-secondary-light text-secondary">Inactive</span></td>
+                                              <td>
+                                                 <button class="btn btn-sm btn-warning me-1" title="Edit"><i class="fas fa-user-edit me-1"></i>Edit</button>
+                                                 <button class="btn btn-sm btn-success me-1" title="Activate"><i class="fas fa-user-check me-1"></i>Activate</button>
+                                                 <button class="btn btn-sm btn-danger" title="Delete"><i class="fas fa-user-times me-1"></i>Delete</button>
+                                             </td>
+                                         </tr>
+                                         <!-- Add-->
+                                     </tbody>
+                                 </table>
+                             </div>
+                         </div>
+                     </div>
+                </div>
+
+
+                 <!--REPORTS-->
+                <div id="reports-view" class="main-view" style="display: none;">
+                    <div class="card content-panel">
+                         <div class="card-body">
+                             <h3 class="text-center mb-4 fw-bold form-title">Reports</h3>
+                             <p class="text-center text-muted">Placeholder: Display charts and reporting options.</p>
+                         </div>
+                     </div>
+                </div>
+
+
+                 <!--SETTINGS-->
+                <div id="settings-view" class="main-view" style="display: none;">
+                    <div class="card content-panel">
+                         <div class="card-body">
+                             <h3 class="text-center mb-4 fw-bold form-title">Settings</h3>
+                             <p class="text-center text-muted">Placeholder: Display system settings options.</p>
+                         </div>
+                     </div>
+                </div>
+
+
+            </main>
+
+            <!--Footer-->
+            <footer class="footer mt-auto py-3 text-center">
+                 <small>© 2025 CCS Admin Panel | CCSIELS</small>
+            </footer>
+
+        </div> 
+    </div> 
+
+  
+    <script src="jquery-3.7.1.min.js"></script>
+
+    <script src="assets/bootstrap.bundle.min.js"></script>
+
+    <script src="script.js"></script>
+</body>
 </html>
