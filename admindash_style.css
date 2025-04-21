@@ -56,6 +56,13 @@ body {
     min-height: 100vh;
 }
 
+
+.navbar-logo-img {
+    height: 60px; 
+    width: auto; 
+    vertical-align: middle;
+  
+}
 /* --- Sidebar --- */
 #sidebar {
     min-width: var(--sidebar-width);
