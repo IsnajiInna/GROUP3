@@ -4,12 +4,15 @@
     border-box; }
 body {
     font-family: 'Poppins', sans-serif;
+    line-height: 1.6; 
     background-color: #f8f9fa; 
+    color: #333; 
+    display: flex; 
     margin: 0;
-    padding: 0;
-    min-height: 100vh;
-    overflow-x: hidden;
-}
+     padding: 0;
+     overflow-x: hidden;
+    flex-direction: column; 
+    min-height: 100vh; }
 button { 
     cursor: pointer; 
     font-family: inherit;
