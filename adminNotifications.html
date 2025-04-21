@@ -1,0 +1,161 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Notifications</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+  />
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-gray-100 min-h-screen p-6">
+  <div class="max-w-xl mx-auto">
+    <header class="flex justify-between items-center mb-6">
+      <h1 class="text-[24px] font-bold text-gray-900 select-none">🔔 Notifications</h1>
+      <button
+        id="clearAllBtn"
+        class="text-sm text-[#144214] font-semibold hover:underline focus:outline-none"
+        aria-label="Clear all notifications"
+      >
+        Clear all
+      </button>
+    </header>
+
+    <ul id="notificationList" class="space-y-3">
+      <li
+        class="bg-white rounded-lg shadow-sm p-4 flex items-start justify-between"
+        tabindex="0"
+      >
+        <div class="flex items-center gap-4">
+          <div class="flex-shrink-0 text-blue-600 text-xl mt-1" aria-hidden="true">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <div>
+            <p class="text-[15px] text-gray-900">John requested to borrow a projector</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs text-[#999999] select-none">2025-04-27 14:32</span>
+              <span
+                class="text-xs font-semibold px-2 py-0.5 rounded-full bg-yellow-100 text-yellow-700 select-none"
+                >Pending</span
+              >
+            </div>
+          </div>
+        </div>
+        <button
+          class="text-sm text-[#144214] font-semibold hover:underline focus:outline-none self-start"
+          aria-label="Mark notification as read"
+        >
+          Mark as read
+        </button>
+      </li>
+
+      <li
+        class="bg-white rounded-lg shadow-sm p-4 flex items-start justify-between"
+        tabindex="0"
+      >
+        <div class="flex items-center gap-4">
+          <div class="flex-shrink-0 text-green-600 text-xl mt-1" aria-hidden="true">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div>
+            <p class="text-[15px] text-gray-900">Projector request approved</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs text-[#999999] select-none">2025-04-26 09:15</span>
+              <span
+                class="text-xs font-semibold px-2 py-0.5 rounded-full bg-green-100 text-green-700 select-none"
+                >Approved</span
+              >
+            </div>
+          </div>
+        </div>
+        <button
+          class="text-sm text-[#144214] font-semibold hover:underline focus:outline-none self-start"
+          aria-label="Mark notification as read"
+        >
+          Mark as read
+        </button>
+      </li>
+
+      <li
+        class="bg-white rounded-lg shadow-sm p-4 flex items-start justify-between"
+        tabindex="0"
+      >
+        <div class="flex items-center gap-4">
+          <div class="flex-shrink-0 text-red-600 text-xl mt-1" aria-hidden="true">
+            <i class="fas fa-times-circle"></i>
+          </div>
+          <div>
+            <p class="text-[15px] text-gray-900">Request to borrow laptop rejected</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs text-[#999999] select-none">2025-04-25 17:48</span>
+              <span
+                class="text-xs font-semibold px-2 py-0.5 rounded-full bg-red-100 text-red-700 select-none"
+                >Rejected</span
+              >
+            </div>
+          </div>
+        </div>
+        <button
+          class="text-sm text-[#144214] font-semibold hover:underline focus:outline-none self-start"
+          aria-label="Mark notification as read"
+        >
+          Mark as read
+        </button>
+      </li>
+
+      <li
+        class="bg-white rounded-lg shadow-sm p-4 flex items-start justify-between"
+        tabindex="0"
+      >
+        <div class="flex items-center gap-4">
+          <div class="flex-shrink-0 text-blue-600 text-xl mt-1" aria-hidden="true">
+            <i class="fas fa-info-circle"></i>
+          </div>
+          <div>
+            <p class="text-[15px] text-gray-900">New equipment added to inventory</p>
+            <div class="flex items-center gap-2 mt-1">
+              <span class="text-xs text-[#999999] select-none">2025-04-24 11:22</span>
+            </div>
+          </div>
+        </div>
+        <button
+          class="text-sm text-[#144214] font-semibold hover:underline focus:outline-none self-start"
+          aria-label="Mark notification as read"
+        >
+          Mark as read
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <script>
+    const clearAllBtn = document.getElementById('clearAllBtn');
+    const notificationList = document.getElementById('notificationList');
+
+    clearAllBtn.addEventListener('click', () => {
+      if (confirm('Are you sure you want to clear all notifications?')) {
+        notificationList.innerHTML = '';
+      }
+    });
+
+    notificationList.addEventListener('click', (e) => {
+      if (e.target && e.target.textContent === 'Mark as read') {
+        const li = e.target.closest('li');
+        if (li) {
+          li.remove();
+        }
+      }
+    });
+  </script>
+</body>
+</html>
