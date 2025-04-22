@@ -23,10 +23,6 @@ input, textarea, button {
 img { max-width: 100%;
      display: block; }
 
-
-.top-bar { height: 5px; 
-    background-color: #007bff; 
-    width: 100%; }
 .app-container {
      display: flex;
     flex-grow: 1; 
