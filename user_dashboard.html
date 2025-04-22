@@ -34,7 +34,7 @@
         </aside>
 
    
-        <main class="main-content">
+       <main class="main-content">
             <header class="app-header">
                  <div class="header-left"> 
                      <h1 class="app-title">CCS Inventory</h1>
@@ -44,12 +44,17 @@
                     </div>
                  </div>
                 <div class="user-controls">
-                    <i class="fas fa-bell notification-icon"></i>
+                    <a href="#" data-view="notifications-view">
+                        <i class="fas fa-bell fs-5 text-secondary"></i>
+                     </a>
                     <div class="user-profile">
-                         <i class="fas fa-user-circle user-icon"></i>
-                         <span>User <i class="fas fa-caret-down"></i></span>
-                    </div>
-                </div>
+                        <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="Group 3 Logo.png" alt="Admin Avatar" class="rounded-circle me-2" width="30" height="30">
+                            User
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                            <li><a class="dropdown-item" href="userconfirmation_logout.html" id="logout-link-top"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Logout</a></li>
+                        </ul>
             </header>
 
          
