@@ -6,10 +6,10 @@
     <title>CCSIELS Admin Panel</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-    <!-- *** UPDATED PATH *** -->
+
     <link href="assets/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <!-- *** UPDATED PATH *** -->
+
     <link rel="stylesheet" href="assets/css/admindash_style.css">
 
 </head>
@@ -71,7 +71,7 @@
                         </a>
                     </li>
                     <li>
-                        <!-- *** PATH OK (now relative within admin/) *** -->
+                     
                         <a href="adminLogoutConfirmation.html" id="logout-link" class="sidebar-link">
                             <i class="fas fa-sign-out-alt fa-fw me-2"></i>Log out
                         </a>
@@ -108,14 +108,12 @@
 
                         <div class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                <!-- *** UPDATED PATH *** -->
                                 <img src="images/userprof.jpg" alt="Admin Avatar" class="rounded-circle me-2" width="30" height="30">
                                 Admin Test
                             </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                                 <li><a class="dropdown-item sidebar-link" href="#settings-view"><i class="fas fa-cog fa-fw me-2"></i>Settings</a></li>
                                 <li><hr class="dropdown-divider"></li>
-                                <!-- *** PATH OK (now relative within admin/) *** -->
                                 <li><a class="dropdown-item" href="adminLogoutConfirmation.html" id="logout-link-top"><i class="fas fa-sign-out-alt fa-fw me-2"></i>Logout</a></li>
                             </ul>
                         </div>
@@ -1213,7 +1211,7 @@
 
 
     <!-- Scripts -->
-    <!-- *** UPDATED PATHS *** -->
+   
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
@@ -1259,22 +1257,18 @@
                  editEquipmentModal.querySelector('#editItemName').value = itemName;
                  editEquipmentModal.querySelector('#editItemCategory').value = itemCategory;
                  editEquipmentModal.querySelector('#editItemQuantity').value = itemQuantity;
-                 editEquipmentModal.querySelector('#editItemCode').value = itemCode; // Populate item code
-
-                 // You might need to fetch other details like Brand, Serial, Condition, Remarks, Image URL via AJAX
-                 // For now, just setting values from data attributes
-                 // TODO: Populate Brand, Serial, Condition, Remarks, Image if available in data attributes or fetch dynamically
+                 editEquipmentModal.querySelector('#editItemCode').value = itemCode; 
 
                  var previewImg = editEquipmentModal.querySelector('#editImagePreview img');
                  var noImageSpan = editEquipmentModal.querySelector('#editImagePreview span');
-                 // TODO: Get actual image URL based on item ID if available
-                 var imageUrl = null; // Replace with actual image URL logic if you have it
+                
+                 var imageUrl = null; 
                  if(imageUrl) {
                      previewImg.src = imageUrl;
                      previewImg.style.display = 'block';
                      noImageSpan.style.display = 'none';
                  } else {
-                     previewImg.src = '#'; // Clear previous image src
+                     previewImg.src = '#'; 
                      previewImg.style.display = 'none';
                      noImageSpan.style.display = 'inline';
                  }
