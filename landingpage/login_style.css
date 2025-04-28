@@ -9,6 +9,7 @@
 body {
     background-color: var(--brand-dark-green);
     display: flex;
+    font-family:'Poppins', sans-serif;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start; 
