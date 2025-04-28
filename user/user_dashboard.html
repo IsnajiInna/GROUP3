@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CCS Inventory and Equipment Lending System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="..//assets/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="user_style.css">
+</head>
+<body>
+    <div class="top-bar"></div> 
+
+    <div class="app-container">
+
+        <aside class="sidebar">
+            <nav class="sidebar-nav sidebar-nav-top">
+                <ul>
+                    <li><a href="#" data-view="home-view" class="active"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="#" data-view="equipment-list-view"><i class="fas fa-search"></i> Browse Equipment</a></li>
+                    <li><a href="#" data-view="borrowed-items-view"><i class="fas fa-box"></i> My Borrowed Items</a></li>
+                    <li><a href="#" data-view="history-view"><i class="fas fa-history"></i> History</a></li>
+                    <li><a href="#" data-view="notifications-view"><i class="fas fa-bell"></i> Notifications</a></li>
+                </ul>
+            </nav>
+            <nav class="sidebar-nav sidebar-nav-bottom">
+                 <ul>
+                    <li><a href="#" data-view="faqs-view"><i class="fas fa-question-circle"></i> FAQS</a></li>
+                    <li><a href="#" data-view="settings-view"><i class="fas fa-cog"></i> Settings</a></li>
+                    <li><a href="userconfirmation_logout.html"><i class="fas fa-sign-out-alt"></i> Logout</a></li> 
+                </ul>
+            </nav>
+        </aside>
+
+   
+       <main class="main-content">
+        <header class="app-header">
+            <button class="sidebar-toggle" id="sidebar-toggle-button" aria-label="Toggle sidebar">
+               <i class="fas fa-bars"></i>
+           </button>
+
+            <div class="header-left">
+                <h1 class="app-title">CCS Inventory System</h1>
+               <div class="search-bar view-specific" data-show-on="home-view">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search (Home View)">
+               </div>
+            </div>
+           <div class="user-controls">
+           
+               <a href="#" data-view="notifications-view" id="notification-link" aria-label="View Notifications">
+                   <i class="fas fa-bell fs-5 text-secondary"></i>
+                </a>
+               <div class="user-profile">
+                   <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                       <img src="img/Group 3 Logo.png" alt="User Avatar" class="rounded-circle me-2" width="30" height="30">
+                       <span>User</span>
+                   </a>
+                   <!-- Dropdown Menu -->
+                   <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
+                      
+                       <li>
+                           <a class="dropdown-item" href="#" data-view="settings-view">
+                               <i class="fas fa-cog fa-fw me-2"></i>Settings
+                           </a>
+                       </li>
+                       <li><hr class="dropdown-divider"></li> 
+                       <li>
+                           <a class="dropdown-item" href="userconfirmation_logout.html" id="logout-link-top">
+                               <i class="fas fa-sign-out-alt fa-fw me-2"></i>Logout
+                           </a>
+                       </li>
+                   
+                   </ul>
+                </div>
+           </div>
+       </header>
+
+         
+            <section class="content-body">
+
+          
+                <div id="home-view" class="view-section">
+                    <h1 class="welcome-message">Welcome, User!</h1>
+                     <div class="summary-cards"> <div class="card"> <h4>Borrowed Items</h4> <span class="count count-borrowed">4</span> </div> <div class="card"> <h4>Pending Requests</h4> <span class="count count-pending">1</span> </div> <div class="card"> <h4>Overdue Items</h4> <span class="count count-overdue">2</span> </div> </div>
+                     <div class="recent-activity card"> <h3>Recent Activity</h3> <div class="activity-list"> <div class="activity-header activity-row"> <span class="item">Item</span> <span class="status">Status</span> <span class="date">Date</span> </div> <div class="activity-item activity-row"> <span class="item">Camera</span> <span class="status">Request Approved</span> <span class="date">April 19, 2025</span> </div> <div class="activity-item activity-row"> <span class="item">Laptop</span> <span class="status">Returned</span> <span class="date">April 10, 2025</span> </div> <div class="activity-item activity-row"> <span class="item">Tripod</span> <span class="status">Request Pending</span> <span class="date">April 05, 2025</span> </div> </div> </div>
+                     <div class="reminder-section"> <h4>Reminder</h4> <p>Your borrowed item "Camera" is due on April 25, 2025.</p> </div>
+                </div>
+
+              
+                <div id="equipment-list-view" class="view-section view-hidden">
+                    <div class="browse-header"> <h2>Equipments</h2> <div class="browse-controls"> <button class="filter-button"><i class="fas fa-filter"></i> Filters</button> <div class="search-container"> <i class="fas fa-search search-icon-inline"></i> <input type="text" placeholder="Search" class="search-input"> </div> </div> </div>
+                    <div class="equipment-grid">
+                        <div class="equipment-card"> <div class="item-image"><img src="img/ae9df631-3f57-4293-9c0c-be0f758e378a.bcd827b9231c9321f0d49a7d9b00121c.webp" alt="Laptop"></div> <div class="item-details"> <p><strong>Item Name:</strong> Lenovo Laptop</p> <p><strong>Model:</strong> Lenovo IdeaPad 3</p> <p><strong>Condition:</strong> Good, Fair</p> <p><strong>Quantity Available:</strong> 3</p> <button class="request-button" data-item-type="laptop">Request</button> </div> </div>
+                        <div class="equipment-card"> <div class="item-image"><img src="img/ViewSonic-pro9000_right_hires-e1408344520220.jpg" alt="Projector"></div> <div class="item-details"> <p><strong>Item Name:</strong> Projector</p> <p><strong>Model:</strong> Epson EB-E01 XGA 3LCD</p> <p><strong>Condition:</strong> New, Good, Fair</p> <p><strong>Quantity Available:</strong> 5</p> <button class="request-button" data-item-type="projector">Request</button> </div> </div>
+                        <div class="equipment-card"> <div class="item-image"><img src="img/91bzi04N0IL._AC_SL1500_.jpg" alt="HDMI Cable"></div> <div class="item-details"> <p><strong>Item Name:</strong> HDMI Cable</p> <p><strong>Model:</strong> Cable 10m</p> <p><strong>Condition:</strong> Good, Fair</p> <p><strong>Quantity Available:</strong> 3</p> <button class="request-button" data-item-type="hdmi">Request</button> </div> </div>
+                         <div class="equipment-card"> <div class="item-image"><img src="img/dell_pxk14_wm123_optical_mouse_1135878.jpg" alt="Mouse"></div> <div class="item-details"> <p><strong>Item Name:</strong> Mouse</p> <p><strong>Model:</strong> A4Tech OP-720 USB</p> <p><strong>Condition:</strong> Good, Needs Repair</p> <p><strong>Quantity Available:</strong> 2</p> <button class="request-button" data-item-type="mouse">Request</button> </div> </div>
+                        <div class="equipment-card"> <div class="item-image"><img src="img/What-is-Keyboard.jpg" alt="Keyboard"></div> <div class="item-details"> <p><strong>Item Name:</strong> Keyboard</p> <p><strong>Model:</strong> A4Tech KRS-85 Usb</p> <p><strong>Condition:</strong> Good, Fair</p> <p><strong>Quantity Available:</strong> 3</p> <button class="request-button" data-item-type="keyboard">Request</button> </div> </div>
+                        <div class="equipment-card"> <div class="item-image"><img src="img/foxin-ups-60va-1.webp" alt="UPS"></div> <div class="item-details"> <p><strong>Item Name:</strong> UPS</p> <p><strong>Model:</strong> APC UPS 650VA 360W</p> <p><strong>Condition:</strong> Fair, Needs Repair</p> <p><strong>Quantity Available:</strong> 2</p> <button class="request-button" data-item-type="ups">Request</button> </div> </div>
+                    </div>
+                </div>
+
+                <div id="specific-item-view" class="view-section view-hidden">
+                     <div class="browse-header"> <h2>Available Items: <span id="specific-item-type">Laptop</span></h2> <button class="back-button" data-target-view="equipment-list-view"><i class="fas fa-arrow-left"></i> Back to List</button> </div>
+                     <div class="equipment-grid">
+                         <div class="equipment-card"> <div class="item-image"><img src="img/ae9df631-3f57-4293-9c0c-be0f758e378a.bcd827b9231c9321f0d49a7d9b00121c.webp" alt="Laptop L01"></div> <div class="item-details"> <p><strong>Item Name:</strong> Lenovo Laptop</p> <p><strong>Model:</strong> Lenovo IdeaPad 3</p> <p><strong>Item Code:</strong> L01 Lenovo Laptop</p> <p><strong>Condition:</strong> Good</p> <button class="request-specific-button" data-item-code="L01">Request</button> </div> </div>
+                         <div class="equipment-card"> <div class="item-image"><img src="img/ae9df631-3f57-4293-9c0c-be0f758e378a.bcd827b9231c9321f0d49a7d9b00121c.webp" alt="Laptop L02"></div> <div class="item-details"> <p><strong>Item Name:</strong> Lenovo Laptop</p> <p><strong>Model:</strong> Lenovo IdeaPad 3</p> <p><strong>Item Code:</strong> L02 Lenovo Laptop</p> <p><strong>Condition:</strong> Good</p> <button class="request-specific-button" data-item-code="L02">Request</button> </div> </div>
+                         <div class="equipment-card"> <div class="item-image"><img src="img/ae9df631-3f57-4293-9c0c-be0f758e378a.bcd827b9231c9321f0d49a7d9b00121c.webp" alt="Laptop L03"></div> <div class="item-details"> <p><strong>Item Name:</strong> Lenovo Laptop</p> <p><strong>Model:</strong> Lenovo IdeaPad 3</p> <p><strong>Item Code:</strong> L03 Lenovo Laptop</p> <p><strong>Condition:</strong> Fair</p> <button class="request-specific-button" data-item-code="L03">Request</button> </div> </div>
+                     </div>
+                </div>
+                <div id="request-form-view" class="view-section view-hidden">
+                     <div class="browse-header"> <h2>Borrow Request</h2> <button class="back-button" data-target-view="specific-item-view"><i class="fas fa-arrow-left"></i> Back to Items</button> </div>
+                    <div class="form-container card">
+                         <form id="borrow-request-form"> <h3>Borrower Details</h3> <div class="form-group"> <label for="full-name">Full Name</label> <input type="text" id="full-name" name="full-name" required> </div> <div class="form-group"> <label for="course-section">Course/ Year & Section</label> <input type="text" id="course-section" name="course-section" required> </div> <div class="form-group"> <label for="contact-number">Contact Number</label> <input type="tel" id="contact-number" name="contact-number" required> </div> <h3>Schedule</h3> <div class="form-group"> <label for="date-needed">Date Needed</label> <input type="date" id="date-needed" name="date-needed" required> </div> <div class="form-group"> <label for="return-date">Return Date</label> <input type="date" id="return-date" name="return-date" required> </div> <h3>Purpose</h3> <div class="form-group"> <label for="purpose">Purpose for Borrowing</label> <textarea id="purpose" name="purpose" rows="4" required></textarea> </div> <button type="submit" class="submit-button form-submit-button">Request Item</button> </form>
+                    </div>
+                </div>
+
+                <div id="terms-view" class="view-section view-hidden">
+                    <div class="terms-container card"> <h3>Borrowing Terms & Conditions</h3> <ol class="terms-list"> <li>Only enrolled CCS students with valid IDs can borrow equipment.</li> <li>Maximum of 2 items per student. Borrowing duration is up to 3 days.</li> <li>Pick-up must be done within 24 hours after approval.</li> <li>Inspect the item upon pick-up. Report existing issues immediately</li> <li>Return items on time. Late returns may lead to temporary suspension.</li> <li>You are responsible for lost or damaged items and must cover repair/replacement costs.</li> <li>Items are for academic use only and cannot be lent to others.</li> <li>By agreeing, you accept full responsibility during the borrowing period.</li> </ol> <div class="agreement-section"> <input type="checkbox" id="terms-agree" name="terms-agree" required> <label for="terms-agree">I have read and agree to the terms and conditions above.</label> </div> <button id="submit-borrow-request" class="submit-button terms-submit-button" disabled>Submit Borrow Request</button> </div>
+                </div>
+
+                <div id="borrowed-items-view" class="view-section view-hidden">
+                     <div class="browse-header"> <h2>Borrowed Items</h2> </div>
+                    <div class="equipment-grid">
+                        <div class="borrowed-item-card equipment-card"> <div class="item-image"><img src="img/ae9df631-3f57-4293-9c0c-be0f758e378a.bcd827b9231c9321f0d49a7d9b00121c.webp" alt="Laptop"></div> <div class="item-details"> <p><strong>Item Name:</strong> Lenovo Laptop</p> <p><strong>Model:</strong> Lenovo IdeaPad 3</p> <p><strong>Item Code:</strong> L01 Lenovo Laptop</p> <p><strong>Condition:</strong> Good</p> <p class="due-date"><strong>Due Date:</strong> 10-26-2025</p> <button class="return-item-button" data-item-code="L01">Return Item</button> </div> </div>
+                        <div class="borrowed-item-card equipment-card"> <div class="item-image"><img src="img/dell_pxk14_wm123_optical_mouse_1135878.jpg" alt="Mouse"></div> <div class="item-details"> <p><strong>Item Name:</strong> A4Tech Mouse</p> <p><strong>Model:</strong> A4Tech OP-720 USB</p> <p><strong>Item Code:</strong> M01 A4Tech</p> <p><strong>Condition:</strong> Good</p> <p class="due-date"><strong>Due Date:</strong> 10-26-2025</p> <button class="return-item-button" data-item-code="M01">Return Item</button> </div> </div>
+                        <div class="borrowed-item-card equipment-card"> <div class="item-image"><img src="img/91bzi04N0IL._AC_SL1500_.jpg" alt="HDMI"></div> <div class="item-details"> <p><strong>Item Name:</strong> HDMI Cable</p> <p><strong>Model:</strong> Cable 10m</p> <p><strong>Item Code:</strong> C01 HDMI</p> <p><strong>Condition:</strong> Fair</p> <p class="due-date"><strong>Due Date:</strong> 10-26-2025</p> <button class="return-item-button" data-item-code="C01">Return Item</button> </div> </div>
+                    </div>
+                </div>
+
+                <div id="history-view" class="view-section view-hidden">
+                     <div class="browse-header"> <h2>History</h2> </div>
+                     <div class="history-container card">
+                         <h3 class="table-title">History of Borrowing</h3>
+                         <table>
+                             <thead> <tr> <th>Item Name</th> <th>Item code & name</th> <th>Date borrowed</th> <th>Return date</th> <th>Status</th> </tr> </thead>
+                             <tbody> <tr> <td>Lenovo Laptop</td> <td>#L01</td> <td>2/29/2025</td> <td>2/30/2025</td> <td class="status-returned">Returned</td> </tr> <tr> <td>A4Tech Mouse</td> <td>#K01</td> <td>2/25/2025</td> <td>2/28/2025</td> <td class="status-approved">Approved</td> </tr> <tr> <td>HDMI Cable</td> <td>#C01</td> <td>2/24/2025</td> <td>2/27/2025</td> <td class="status-returned-late">Returned Late</td> </tr> </tbody>
+                         </table>
+                     </div>
+                </div>
+
+
+                 <div id="notifications-view" class="view-section view-hidden">
+                     <div class="browse-header"> <h2>Notifications</h2> </div>
+                     <div class="notifications-container card">
+                         <div class="notification-list">
+                            <div class="notification-item status-approved"> <div class="notification-icon"><i class="fas fa-check-circle"></i></div> <div class="notification-content"> <p><strong>Approved:</strong> Your request to borrow a Lenovo Laptop has been approved.</p> <span class="notification-time">April 19, 2025 - 02:15 PM</span> </div> </div>
+                            <div class="notification-item status-rejected"> <div class="notification-icon"><i class="fas fa-times-circle"></i></div> <div class="notification-content"> <p><strong>Rejected:</strong> Your request to borrow a A4Tech Mouse was rejected due to unavailability.</p> <span class="notification-time">April 18, 2025 - 05:40 PM</span> </div> </div>
+                            <div class="notification-item status-reminder"> <div class="notification-icon"><i class="fas fa-exclamation-triangle"></i></div> <div class="notification-content"> <p><strong>Reminder:</strong> Please return the HDMI Cable by April 20, 2025.</p> <span class="notification-time">April 17, 2025 - 10:00 AM</span> </div> </div>
+                            <div class="notification-item status-pending"> <div class="notification-icon"><i class="fas fa-hourglass-half"></i></div> <div class="notification-content"> <p><strong>Pending:</strong> Your request for a Projector is still pending approval.</p> <span class="notification-time">April 18, 2025 - 9:25 AM</span> </div> </div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div id="settings-view" class="view-section view-hidden">
+                     <div class="browse-header"> <h2>Settings</h2> </div>
+                     <div class="settings-container card">
+                        <div class="settings-tabs">
+                             <button class="settings-tab-button active" data-tab-target="settings-profile-tab">Profile</button>
+                             <button class="settings-tab-button" data-tab-target="settings-password-tab">Password</button>
+                             <button class="settings-tab-button" data-tab-target="settings-preferences-tab">Preferences</button>
+                        </div>
+
+                        <div id="settings-profile-tab" class="settings-tab-content">
+                            <h3>Edit Profile</h3>
+                            <form id="profile-form">
+                                <div class="form-group"> <label for="profile-full-name">Full Name</label> <input type="text" id="profile-full-name" value="" placeholder="please enter your full name"> </div>
+                                <div class="form-group"> <label for="profile-email">Email</label> <input type="email" id="profile-email" value="" placeholder="please enter your email"> </div>
+                                <button type="submit" class="submit-button settings-save-button">Save Changes</button>
+                            </form>
+                        </div>
+
+                         <div id="settings-password-tab" class="settings-tab-content view-hidden">
+                             <h3>Changes Password</h3>
+                             <form id="password-form">
+                                 <div class="form-group"> <label for="current-password">Current Password</label> <input type="password" id="current-password" required> </div>
+                                 <div class="form-group"> <label for="new-password">New Password</label> <input type="password" id="new-password" required> </div>
+                                 <div class="form-group"> <label for="confirm-password">Confirm New Password</label> <input type="password" id="confirm-password" required> </div>
+                                 <button type="submit" class="submit-button settings-save-button">Update Password</button>
+                             </form>
+                         </div>
+
+                        <div id="settings-preferences-tab" class="settings-tab-content view-hidden">
+                            <h3>Preferences</h3>
+                            <form id="preferences-form">
+                                <h4>Notification Settings</h4>
+                                <div class="form-group-inline">
+                                    <input type="checkbox" id="email-notifications" checked>
+                                    <label for="email-notifications">Enable Email Notifications</label>
+                                </div>
+                                <div class="preferences-buttons">
+                                    <button type="submit" class="submit-button settings-save-button">Save Preferences</button>
+                                    <button type="button" class="delete-button settings-delete-button">Delete Account</button>
+                                </div>
+                            </form>
+                        </div>
+                     </div>
+                 </div>
+
+                 <div id="faqs-view" class="view-section view-hidden">
+                     <div class="browse-header"> <h2>Frequently Asked Questions</h2> </div>
+                     <div class="faqs-container card">
+                        <details class="faq-item">
+                            <summary>How do I borrow equipment?</summary>
+                            <p>Navigate to "Browse Equipment", find the item you need, and click "Request". Fill out the form and submit.</p>
+                        </details>
+                        <details class="faq-item">
+                             <summary>How long can I borrow items?</summary>
+                             <p>The standard borrowing duration is up to 3 days. Check the specific item details or terms if applicable.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>What happens if I return late?</summary>
+                            <p>Late returns may lead to temporary suspension of borrowing privileges. Please return items on or before the due date.</p>
+                        </details>
+                        <details class="faq-item">
+                            <summary>Who do I contact if I need help?</summary>
+                             <p>Please contact the CCS Lab Facilitator or administrator for assistance.</p>
+                        </details>
+                     </div>
+                 </div>
+
+
+                <div id="status-message" class="status-message-bar view-hidden"></div>
+
+            </section>
+        </main>
+    </div>
+    <script src="..//assets/bootstrap.bundle.min.js"></script>
+    <script src="..//assets/javascript.js"></script>
+</body>
+</html>
