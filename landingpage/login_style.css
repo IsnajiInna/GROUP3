@@ -1,3 +1,10 @@
+:root {
+    --brand-dark-green: #0a4d22; 
+    --brand-light-text: #ffffff;
+    --brand-dark-text: #333333;
+    --card-bg: #ffffff;
+    --footer-bg: #f8f9fa; 
+}
 
 body {
     background-color: var(--brand-dark-green);
