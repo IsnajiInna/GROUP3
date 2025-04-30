@@ -1031,7 +1031,12 @@ img {
         gap: 15px;
     }
     .user-controls {
-        gap: 15px;
+        justify-content: flex-end; 
+        width: 100%; 
+    }
+
+    .user-profile {
+        margin-left: auto; 
     }
 
     .browse-header {
@@ -1142,6 +1147,7 @@ img {
 
     .notifications-container {
         padding: 15px;
+        display: block !important;
     }
     .notification-item {
         padding: 10px;
