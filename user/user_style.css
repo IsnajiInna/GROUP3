@@ -47,7 +47,7 @@ img {
     flex-direction: column;
     justify-content: space-between;
     flex-shrink: 0;
-    transition: transform 0.3s ease-in-out;
+     transition: transform 0.3s ease-in-out;
 
 
 }
