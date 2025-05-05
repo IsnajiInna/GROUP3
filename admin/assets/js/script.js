@@ -272,7 +272,7 @@ $(document).ready(function () {
         // Add actual logout logic (clear session/token, API call)
         setTimeout(() => {
             // Adjust path based on deployment structure
-            window.location.href = '../../index.html'; // Assumes admin is 2 levels down
+            window.location.href = '../index.html'; // Assumes admin is 2 levels down
         }, 500);
     });
 
