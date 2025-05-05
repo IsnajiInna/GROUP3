@@ -1210,6 +1210,129 @@ SN003..."
                       </div>
                     </div>
 
+                      <!-- Table of Existing Stock Items -->
+                    <div class="table-responsive">
+                      <table
+                        class="table table-bordered table-striped table-sm align-middle"
+                        id="individualStockTable"
+                      >
+                        <thead class="table-light">
+                          <tr>
+                            <th scope="col">Serial Number / Asset Tag</th>
+                            <th scope="col">Status</th>
+                            <th scope="col">Current Borrower</th>
+                            <th scope="col">Date Acquired</th>
+                            <th scope="col">Notes / Remarks</th>
+                            <th scope="col" class="text-center">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody id="individualStockTableBody">
+                          <!-- Example Row (Repeat Dynamically) -->
+                          <tr>
+                            <td>LP123</td>
+                            <td>
+                              <span class="badge text-bg-success"
+                                >Available</span
+                              >
+                            </td>
+                            <td>N/A</td>
+                            <td>01/15/2024</td>
+                            <td></td>
+                            <td class="text-center">
+                              <button
+                                class="btn btn-outline-secondary btn-sm py-0 px-1 edit-stock-item-btn"
+                                title="Edit Item Details"
+                                data-stock-id="S1"
+                              >
+                                <i class="fas fa-edit"></i>
+                              </button>
+                              <button
+                                class="btn btn-outline-danger btn-sm py-0 px-1 delete-stock-item-btn"
+                                title="Retire/Delete Item"
+                                data-stock-id="S1"
+                              >
+                                <i class="fas fa-trash-alt"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>LP124</td>
+                            <td>Borrowed</td>
+                            <td>Jelord Bojos (Due: 03/25/2024)</td>
+                            <td>01/15/2024</td>
+                            <td></td>
+                            <td class="text-center">
+                              <button
+                                class="btn btn-outline-secondary btn-sm py-0 px-1 edit-stock-item-btn"
+                                title="Edit Item Details"
+                                data-stock-id="S2"
+                              >
+                                <i class="fas fa-edit"></i>
+                              </button>
+                              <button
+                                class="btn btn-outline-danger btn-sm py-0 px-1 delete-stock-item-btn"
+                                title="Retire/Delete Item"
+                                data-stock-id="S2"
+                              >
+                                <i class="fas fa-trash-alt"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>LP125</td>
+                            <td>
+                              <span class="badge text-bg-warning">Damaged</span>
+                            </td>
+                            <td>N/A</td>
+                            <td>01/15/2024</td>
+                            <td>Screen flicker noted 03/20/2024</td>
+                            <td class="text-center">
+                              <button
+                                class="btn btn-outline-secondary btn-sm py-0 px-1 edit-stock-item-btn"
+                                title="Edit Item Details"
+                                data-stock-id="S3"
+                              >
+                                <i class="fas fa-edit"></i>
+                              </button>
+                              <button
+                                class="btn btn-outline-danger btn-sm py-0 px-1 delete-stock-item-btn"
+                                title="Retire/Delete Item"
+                                data-stock-id="S3"
+                              >
+                                <i class="fas fa-trash-alt"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <!-- More items loaded via JS -->
+                          <tr id="stockEmptyRow" style="display: none">
+                            <td colspan="6" class="text-center text-muted py-3">
+                              No individual stock items found for this equipment
+                              type.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>
+                    <!-- Pagination for Stock Items (if many items) -->
+                    <nav
+                      aria-label="Stock Item Navigation"
+                      class="d-flex justify-content-end mt-2"
+                      id="stockPagination"
+                    ></nav>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
                 
                 <!--  NEW: BORROW REQUESTS VIEW   -->
                 <div id="borrow-requests-view" class="main-view" style="display: none;">
