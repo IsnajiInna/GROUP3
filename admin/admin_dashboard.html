@@ -145,20 +145,30 @@
                   </button>
                 </div>
               </form>
-                        <div class="nav-item me-3">
-                            <a class="nav-link position-relative sidebar-link" href="#notifications-view"
-                                title="Notifications" id="top-nav-notifications">
-                                <i class="fas fa-bell fs-5 text-secondary"></i>
-                            </a>
-                        </div>
-                        <div class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle d-flex align-items-center" href="#" id="profileDropdown"
-                                role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                               
-                                <img src="images/userprof.jpg" alt="Admin Avatar" class="rounded-circle me-2" width="30"
-                                    height="30">
-                                Admin Test
-                            </a>
+                        <!-- Notifications Dropdown (Improved) -->
+              <div class="nav-item dropdown me-2 me-lg-3">
+                <!-- Added dropdown class -->
+                <a
+                  class="nav-link position-relative link-secondary px-2 dropdown-toggle"
+                  href="#"
+                  id="navbarNotificationsDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  title="Notifications"
+                >
+                  <!-- Changed to dropdown trigger -->
+                  <i class="fas fa-bell fs-5"></i>
+                  <!-- Indicator Dot (JS Controls Visibility) -->
+                  <span
+                    class="position-absolute top-0 start-100 translate-middle p-1 bg-danger border border-light rounded-circle"
+                    id="topnav-notif-indicator"
+                    style="display: none"
+                    title="New notifications"
+                  >
+                    <span class="visually-hidden">New notifications</span>
+                  </span>
+                </a>
                             <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
                                 <li><a class="dropdown-item sidebar-link" href="#settings-view"><i
                                             class="fas fa-cog fa-fw me-2"></i>Settings</a></li>
