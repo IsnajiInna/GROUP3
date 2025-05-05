@@ -169,21 +169,125 @@
                     <span class="visually-hidden">New notifications</span>
                   </span>
                 </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profileDropdown">
-                                <li><a class="dropdown-item sidebar-link" href="#settings-view"><i
-                                            class="fas fa-cog fa-fw me-2"></i>Settings</a></li>
-                                <li>
-                                    <hr class="dropdown-divider">
-                                </li>
-                                <!-- Logout modal -->
-                                <li><a class="dropdown-item" href="#" id="logout-link-top" data-bs-toggle="modal"
-                                        data-bs-target="#logoutConfirmationModal"><i
-                                            class="fas fa-sign-out-alt fa-fw me-2"></i>Logout</a></li>
-                            </ul>
+                            <!-- Dropdown Menu -->
+                <ul
+                  class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2"
+                  aria-labelledby="navbarNotificationsDropdown"
+                  style="min-width: 300px; max-height: 400px; overflow-y: auto"
+                >
+                  <li><h6 class="dropdown-header">Notifications</h6></li>
+                  <!-- Notification List Area (JS Populates This) -->
+                  <div id="navbarNotificationList">
+                    <!-- Example Notification Item (Repeat Dynamically) -->
+                    <li>
+                      <a
+                        class="dropdown-item small d-flex align-items-start"
+                        href="#"
+                      >
+                        <i
+                          class="fas fa-clipboard-list text-primary me-2 mt-1"
+                        ></i>
+                        <div>
+                          New borrow request from J. Bojos.
+                          <div class="text-muted" style="font-size: 0.8em">
+                            5 mins ago
+                          </div>
                         </div>
-                    </div>
-                </div>
-            </nav>
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item small d-flex align-items-start"
+                        href="#"
+                      >
+                        <i
+                          class="fas fa-exclamation-triangle text-danger me-2 mt-1"
+                        ></i>
+                        <div>
+                          Item #P01 Epson Projector is overdue.
+                          <div class="text-muted" style="font-size: 0.8em">
+                            1 day ago
+                          </div>
+                        </div>
+                      </a>
+                    </li>
+                    <!-- End Example -->
+                  </div>
+                  <!-- Empty State (JS Shows/Hides This) -->
+                  <li id="navbarNotificationsEmpty" style="display: none">
+                    <p class="dropdown-item text-center text-muted small my-2">
+                      No new notifications
+                    </p>
+                  </li>
+                  <li><hr class="dropdown-divider my-1" /></li>
+                  <!-- Link to Full Notifications Page -->
+                  <li>
+                    <a
+                      class="dropdown-item text-center small text-primary sidebar-link"
+                      href="#notifications-view"
+                    >
+                      <i class="fas fa-envelope-open-text me-1"></i> View All
+                      Notifications
+                    </a>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Profile Dropdown -->
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle d-flex align-items-center p-1 border rounded-pill pe-2"
+                  href="#"
+                  id="profileDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="images/userprof.jpg"
+                    alt="Admin Avatar"
+                    class="rounded-circle me-1"
+                    width="30"
+                    height="30"
+                  />
+                  <!-- UPDATE PATH -->
+                  <span
+                    class="d-none d-sm-inline me-1 small"
+                    id="profileUsername"
+                    >Admin Test</span
+                  >
+                </a>
+                <ul
+                  class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2"
+                  aria-labelledby="profileDropdown"
+                >
+                  <li>
+                    <a
+                      class="dropdown-item small sidebar-link"
+                      href="#settings-view"
+                      ><i class="fas fa-user-cog fa-fw me-2 text-muted"></i
+                      >Profile Settings</a
+                    >
+                  </li>
+                  <li><hr class="dropdown-divider my-1" /></li>
+                  <li>
+                    <a
+                      class="dropdown-item small"
+                      href="#"
+                      id="logout-link-top"
+                      data-bs-toggle="modal"
+                      data-bs-target="#logoutConfirmationModal"
+                      ><i class="fas fa-sign-out-alt fa-fw me-2 text-muted"></i
+                      >Logout</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- End Right Aligned Items -->
+          </div>
+        </nav>
+        <!-- End Improved Top Navbar -->
 
             <!--MAIN CONTENT-->
             <main id="main-content" class="p-3 p-md-4">
