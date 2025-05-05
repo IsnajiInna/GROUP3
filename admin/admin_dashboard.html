@@ -1415,190 +1415,218 @@ SN003..."
               </div>
             </div>
           </div>
-
+                <!-- End main-view -->
                 
                 <!--  NEW: BORROW REQUESTS VIEW   -->
-                <div id="borrow-requests-view" class="main-view" style="display: none;">
-                    <div class="card content-panel">
-                        <div class="card-header">
-                            <ul class="nav nav-tabs card-header-tabs" id="borrowRequestTabs" role="tablist">
-                                <li class="nav-item" role="presentation"> <button class="nav-link active"
-                                        id="pending-tab" data-bs-toggle="tab" data-bs-target="#pending-tab-pane"
-                                        type="button" role="tab" aria-controls="pending-tab-pane" aria-selected="true">
-                                        <i class="fas fa-clock me-1"></i> Pending <span
-                                            class="badge bg-warning text-dark ms-1">2</span> </button> </li>
-                                <li class="nav-item" role="presentation"> <button class="nav-link" id="approved-tab"
-                                        data-bs-toggle="tab" data-bs-target="#approved-tab-pane" type="button"
-                                        role="tab" aria-controls="approved-tab-pane" aria-selected="false"> <i
-                                            class="fas fa-check-circle me-1"></i> Approved / Borrowed <span
-                                            class="badge bg-success text-white ms-1">2</span> </button> </li>
-                                <li class="nav-item" role="presentation"> <button class="nav-link" id="rejected-tab"
-                                        data-bs-toggle="tab" data-bs-target="#rejected-tab-pane" type="button"
-                                        role="tab" aria-controls="rejected-tab-pane" aria-selected="false"> <i
-                                            class="fas fa-times-circle me-1"></i> Rejected <span
-                                            class="badge bg-danger text-white ms-1">2</span> </button> </li>
-                            </ul>
-                        </div>
-                        <div class="card-body">
-                            <div class="tab-content" id="borrowRequestTabContent">
-                                <!-- Pending Tab Pane -->
-                                <div class="tab-pane fade show active" id="pending-tab-pane" role="tabpanel"
-                                    aria-labelledby="pending-tab" tabindex="0">
-                                    <h4 class="mb-3 tab-pane-title">Pending Approvals</h4>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover align-middle requests-table">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th>Student Name</th>
-                                                    <th>Item Requested</th>
-                                                    <th>Purpose</th>
-                                                    <th>Date Needed</th>
-                                                    <th>Return Date</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Jelord Bojos</td>
-                                                    <td>#L01 Lenovo Laptop</td>
-                                                    <td>Project Defense</td>
-                                                    <td>3/21/2025</td>
-                                                    <td>3/24/2025</td>
-                                                    <td>  <button
-                                                            class="btn btn-sm btn-success me-1 approve-request-btn"
-                                                            title="Approve" data-request-id="P1"><i
-                                                                class="fas fa-check me-1"></i>Approve</button> <button
-                                                            class="btn btn-sm btn-danger reject-request-btn"
-                                                            title="Reject" data-request-id="P1"><i
-                                                                class="fas fa-times me-1"></i>Reject</button> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Nurhana Aminulla</td>
-                                                    <td>#M01 A4Tech Mouse</td>
-                                                    <td>Lab Activity</td>
-                                                    <td>3/22/2025</td>
-                                                    <td>3/22/2025</td>
-                                                    <td> <button
-                                                            class="btn btn-sm btn-success me-1 approve-request-btn"
-                                                            title="Approve" data-request-id="P2"><i
-                                                                class="fas fa-check me-1"></i>Approve</button> <button
-                                                            class="btn btn-sm btn-danger reject-request-btn"
-                                                            title="Reject" data-request-id="P2"><i
-                                                                class="fas fa-times me-1"></i>Reject</button> </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <!-- Approved Tab Pane -->
-                                <div class="tab-pane fade" id="approved-tab-pane" role="tabpanel"
-                                    aria-labelledby="approved-tab" tabindex="0">
-                                    <h4 class="mb-3 tab-pane-title">Approved / Borrowed Items</h4>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover align-middle requests-table">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th>Student Name</th>
-                                                    <th>Item Borrowed</th>
-                                                    <th>Purpose</th>
-                                                    <th>Borrowed</th>
-                                                    <th>Due Date</th>
-                                                    <th>Status</th>
-                                                    <th>Actions</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Jelord Bojos</td>
-                                                    <td>#K01 A4Tech Keyboard</td>
-                                                    <td>Thesis Typing</td>
-                                                    <td>3/18/2025</td>
-                                                    <td>3/25/2025</td>
-                                                    <td><span
-                                                            class="badge bg-success-light text-success">Borrowed</span>
-                                                    </td>
-                                                    <td> <button
-                                                            class="btn btn-sm btn-primary action-btn confirm-return-btn"
-                                                            title="Confirm Return" data-bs-toggle="modal"
-                                                            data-bs-target="#viewReturnDetailsModal" data-borrow-id="B1"
-                                                            data-item-name="#K01 A4Tech Keyboard"
-                                                            data-student-name="Jelord Bojos"
-                                                            data-return-condition="Good"
-                                                            data-return-notes="Returned on time, working fine."> <i
-                                                                class="fas fa-undo"></i> Confirm Return </button>
-                                                        <button
-                                                            class="btn btn-sm btn-outline-secondary ms-1 action-btn notify-due-btn"
-                                                            title="Notify User about Due Date"><i
-                                                                class="fas fa-bell"></i> Notify</button> </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Miko Zamora</td>
-                                                    <td>#P01 Epson Projector</td>
-                                                    <td>Org Event</td>
-                                                    <td>3/10/2025</td>
-                                                    <td>3/15/2025</td>
-                                                    <td><span class="badge bg-danger-light text-danger">Overdue</span>
-                                                    </td>
-                                                    <td> <button
-                                                            class="btn btn-sm btn-primary action-btn confirm-return-btn"
-                                                            title="Confirm Return" data-bs-toggle="modal"
-                                                            data-bs-target="#viewReturnDetailsModal" data-borrow-id="B2"
-                                                            data-item-name="#P01 Epson Projector"
-                                                            data-student-name="Miko Zamora" data-return-condition="Fair"
-                                                            data-return-notes="Returned late. Minor scuffs noted."> <i
-                                                                class="fas fa-undo"></i> Confirm Return </button>
-                                                        <button
-                                                            class="btn btn-sm btn-danger ms-1 action-btn notify-overdue-btn"
-                                                            title="Notify User about Overdue Item"><i
-                                                                class="fas fa-bell"></i> Notify Overdue</button> </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <!-- Rejected Tab Pane -->
-                                <div class="tab-pane fade" id="rejected-tab-pane" role="tabpanel"
-                                    aria-labelledby="rejected-tab" tabindex="0">
-                                    <h4 class="mb-3 tab-pane-title">Rejected Requests</h4>
-                                    <div class="table-responsive">
-                                        <table class="table table-hover align-middle requests-table">
-                                            <thead class="table-light">
-                                                <tr>
-                                                    <th>Student Name</th>
-                                                    <th>Item Requested</th>
-                                                    <th>Purpose</th>
-                                                    <th>Date Requested</th>
-                                                    <th>Reason (If any)</th>
-                                                    <th>Status</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>Jelord Bojos</td>
-                                                    <td>#C01 HDMI Cable</td>
-                                                    <td>Personal Use - Gaming</td>
-                                                    <td>3/19/2025</td>
-                                                    <td class="text-muted fst-italic">Non-academic purpose</td>
-                                                    <td><span class="badge bg-danger-light text-danger">Rejected</span>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Nurhana Aminulla</td>
-                                                    <td>#L02 Lenovo Laptop</td>
-                                                    <td>Outside School Event</td>
-                                                    <td>3/20/2025</td>
-                                                    <td class="text-muted fst-italic">Item unavailable</td>
-                                                    <td><span class="badge bg-danger-light text-danger">Rejected</span>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div
+            id="borrow-requests-view"
+            class="main-view"
+            style="display: block"
+          >
+            <!-- Display block for visibility -->
+            <div class="card content-panel border-0 shadow-sm">
+              <!-- Tab Navigation -->
+              <div class="card-header border-bottom-0 p-0">
+                <!-- Remove padding for tighter tabs -->
+                <ul
+                  class="nav nav-tabs nav-tabs-custom"
+                  id="borrowRequestTabs"
+                  role="tablist"
+                >
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link active"
+                      id="pending-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#pending-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="pending-tab-pane"
+                      aria-selected="true"
+                    >
+                      <i class="fas fa-clock me-1"></i> Pending
+                      <!-- Standard badge -->
+                      <span
+                        class="badge bg-warning text-dark ms-1 rounded-pill"
+                        id="pending-count"
+                        >2</span
+                      >
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="approved-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#approved-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="approved-tab-pane"
+                      aria-selected="false"
+                    >
+                      <i class="fas fa-check-circle me-1"></i> Approved /
+                      Borrowed
+                      <span
+                        class="badge bg-success ms-1 rounded-pill"
+                        id="approved-count"
+                        >2</span
+                      >
+                    </button>
+                  </li>
+                  <li class="nav-item" role="presentation">
+                    <button
+                      class="nav-link"
+                      id="rejected-tab"
+                      data-bs-toggle="tab"
+                      data-bs-target="#rejected-tab-pane"
+                      type="button"
+                      role="tab"
+                      aria-controls="rejected-tab-pane"
+                      aria-selected="false"
+                    >
+                      <i class="fas fa-times-circle me-1"></i> Rejected
+                      <span
+                        class="badge bg-danger ms-1 rounded-pill"
+                        id="rejected-count"
+                        >2</span
+                      >
+                    </button>
+                  </li>
+                </ul>
+              </div>
+              <div class="card-body">
+                <div class="tab-content" id="borrowRequestTabContent">
+                  <!-- ==================== Pending Tab Pane ==================== -->
+                  <div
+                    class="tab-pane fade show active"
+                    id="pending-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="pending-tab"
+                    tabindex="0"
+                  >
+                    <h4 class="mb-3 tab-pane-title visually-hidden">
+                      Pending Approvals
+                    </h4>
+                    <div class="row mb-3 gx-2 gy-2">
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm"
+                          placeholder="Search Pending (Student, Item)..."
+                          id="pendingSearch"
+                        />
+                      </div>
+                      <!-- Add date filters if needed -->
                     </div>
-                </div>
+                    <div class="table-responsive">
+                      <table
+                        class="table table-hover table-sm align-middle requests-table"
+                        id="pendingRequestsTable"
+                      >
+                        <thead class="table-light">
+                          <tr>
+                            <th scope="col">Student Name</th>
+                            <th scope="col">Item Requested</th>
+                            <th scope="col">Purpose</th>
+                            <th scope="col">Date Needed</th>
+                            <th scope="col">Return Date</th>
+                            <th scope="col" class="text-center">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Row 1 -->
+                          <tr>
+                            <td>Jelord Bojos</td>
+                            <td>#L01 Lenovo Laptop</td>
+                            <td>Project Defense</td>
+                            <td>03/21/2024</td>
+                            <td>03/24/2024</td>
+                            <td class="text-center">
+                              <button
+                                class="btn btn-sm btn-outline-success me-1 approve-request-btn"
+                                title="Approve"
+                                data-request-id="P1"
+                              >
+                                <i class="fas fa-check"></i>
+                              </button>
+                              <button
+                                class="btn btn-sm btn-outline-danger me-1 reject-request-btn"
+                                title="Reject"
+                                data-bs-toggle="modal"
+                                data-bs-target="#rejectReasonModal"
+                                data-request-id="P1"
+                                data-student-name="Jelord Bojos"
+                                data-item-name="#L01 Lenovo Laptop"
+                              >
+                                <i class="fas fa-times"></i>
+                              </button>
+                              <button
+                                class="btn btn-sm btn-outline-secondary view-request-details-btn"
+                                title="View Details"
+                                data-bs-toggle="modal"
+                                data-bs-target="#requestDetailsModal"
+                                data-request-id="P1"
+                              >
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <!-- Row 2 -->
+                          <tr>
+                            <td>Nurhana Aminulla</td>
+                            <td>#M01 A4Tech Mouse</td>
+                            <td>Lab Activity</td>
+                            <td>03/22/2024</td>
+                            <td>03/22/2024</td>
+                            <td class="text-center">
+                              <button
+                                class="btn btn-sm btn-outline-success me-1 approve-request-btn"
+                                title="Approve"
+                                data-request-id="P2"
+                              >
+                                <i class="fas fa-check"></i>
+                              </button>
+                              <button
+                                class="btn btn-sm btn-outline-danger me-1 reject-request-btn"
+                                title="Reject"
+                                data-bs-toggle="modal"
+                                data-bs-target="#rejectReasonModal"
+                                data-request-id="P2"
+                                data-student-name="Nurhana Aminulla"
+                                data-item-name="#M01 A4Tech Mouse"
+                              >
+                                <i class="fas fa-times"></i>
+                              </button>
+                              <button
+                                class="btn btn-sm btn-outline-secondary view-request-details-btn"
+                                title="View Details"
+                                data-bs-toggle="modal"
+                                data-bs-target="#requestDetailsModal"
+                                data-request-id="P2"
+                              >
+                                <i class="fas fa-eye"></i>
+                              </button>
+                            </td>
+                          </tr>
+                          <!-- Empty State Row -->
+                          <tr id="pendingEmptyRow" style="display: none">
+                            <td colspan="6" class="text-center text-muted py-3">
+                              <i class="fas fa-folder-open me-2"></i> No pending
+                              requests found.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- Pagination for Pending -->
+                      <nav
+                        aria-label="Pending Requests Navigation"
+                        class="d-flex justify-content-end mt-2"
+                        id="pendingPagination"
+                      ></nav>
+                    </div>
+                  </div>
+
+                    
                 <!--  END BORROW REQUESTS VIEW -->
 
 
