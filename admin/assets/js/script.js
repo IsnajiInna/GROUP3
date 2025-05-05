@@ -269,10 +269,10 @@ $(document).ready(function () {
         console.log("Logout Confirmed");
         showStatusMessage("Logging out...", "info", 2000);
         if (logoutConfirmationModalInstance) logoutConfirmationModalInstance.hide();
-        // Add actual logout logic (clear session/token, API call)
+       
         setTimeout(() => {
-            // Adjust path based on deployment structure
-            window.location.href = '../index.html'; // Assumes admin is 2 levels down
+            // Adjust path
+            window.location.href = '../../../index.html'; 
         }, 500);
     });
 
