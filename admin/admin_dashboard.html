@@ -2583,6 +2583,272 @@ SN003..."
                     </button>
                   </div>
                 </div>
+
+                  <!-- User Table -->
+                <div class="table-responsive">
+                  <table
+                    class="table table-hover table-striped table-sm align-middle user-management-table"
+                  >
+                    <thead class="table-light">
+                      <!-- Using standard table-light -->
+                      <tr>
+                        <th scope="col">
+                          Full Name <i class="fas fa-sort text-muted ms-1"></i>
+                        </th>
+                        <th scope="col">
+                          Email <i class="fas fa-sort text-muted ms-1"></i>
+                        </th>
+                        <th scope="col">
+                          Role <i class="fas fa-sort text-muted ms-1"></i>
+                        </th>
+                        <!-- Added Role -->
+                        <th scope="col" class="text-center">Status</th>
+                        <th scope="col" class="text-center">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <!-- Rows should be generated dynamically -->
+                      <tr>
+                        <td>Nurhana Aminulla</td>
+                        <td>na2024@wmsu.edu.ph</td>
+                        <td>Student</td>
+                        <td class="text-center">
+                          <!-- Standard Bootstrap badge -->
+                          Active</span>
+                        </td>
+                        <td class="text-center">
+                          <!-- Actions Dropdown -->
+                          <div class="dropdown">
+                            <button
+                              class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                              type="button"
+                              id="dropdownMenuButton1"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <i class="fas fa-cog"></i>
+                              <!-- Gear icon for actions -->
+                            </button>
+                            <ul
+                              class="dropdown-menu dropdown-menu-end"
+                              aria-labelledby="dropdownMenuButton1"
+                            >
+                              <li>
+                                <a
+                                  class="dropdown-item edit-user-btn"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#editUserModal"
+                                  data-user-id="1"
+                                  data-user-name="Nurhana Aminulla"
+                                  data-user-email="na2024@wmsu.edu.ph"
+                                  data-user-role="Student"
+                                  ><i class="fas fa-edit me-2 text-warning"></i
+                                  >Edit</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  class="dropdown-item deactivate-user-btn"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#confirmUserStatusModal"
+                                  data-user-id="1"
+                                  data-user-name="Nurhana Aminulla"
+                                  data-action="deactivate"
+                                  ><i
+                                    class="fas fa-user-slash me-2 text-info"
+                                  ></i
+                                  >Deactivate</a
+                                >
+                              </li>
+                              <li><hr class="dropdown-divider" /></li>
+                              <li>
+                                <a
+                                  class="dropdown-item delete-user-btn text-danger"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#confirmUserDeleteModal"
+                                  data-user-id="1"
+                                  data-user-name="Nurhana Aminulla"
+                                  ><i class="fas fa-trash-alt me-2"></i
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Jelord Bojos</td>
+                        <td>jb2024@wmsu.edu.ph</td>
+                        <td>Student</td>
+                        <td class="text-center">
+                          Active</span>
+                        </td>
+                        <td class="text-center">
+                          <div class="dropdown">
+                            <button
+                              class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                              type="button"
+                              id="dropdownMenuButton2"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <i class="fas fa-cog"></i>
+                            </button>
+                            <ul
+                              class="dropdown-menu dropdown-menu-end"
+                              aria-labelledby="dropdownMenuButton2"
+                            >
+                              <li>
+                                <a
+                                  class="dropdown-item edit-user-btn"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#editUserModal"
+                                  data-user-id="2"
+                                  data-user-name="Jelord Bojos"
+                                  data-user-email="jb2024@wmsu.edu.ph"
+                                  data-user-role="Student"
+                                  ><i class="fas fa-edit me-2 text-warning"></i
+                                  >Edit</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  class="dropdown-item deactivate-user-btn"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#confirmUserStatusModal"
+                                  data-user-id="2"
+                                  data-user-name="Jelord Bojos"
+                                  data-action="deactivate"
+                                  ><i
+                                    class="fas fa-user-slash me-2 text-info"
+                                  ></i
+                                  >Deactivate</a
+                                >
+                              </li>
+                              <li><hr class="dropdown-divider" /></li>
+                              <li>
+                                <a
+                                  class="dropdown-item delete-user-btn text-danger"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#confirmUserDeleteModal"
+                                  data-user-id="2"
+                                  data-user-name="Jelord Bojos"
+                                  ><i class="fas fa-trash-alt me-2"></i
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>Miko Zamora</td>
+                        <td>mz2024@wmsu.edu.ph</td>
+                        <td>Faculty</td>
+                        <td class="text-center">
+                          <!-- Standard Bootstrap badge for inactive -->
+                          Inactive
+                        </td>
+                        <td class="text-center">
+                          <div class="dropdown">
+                            <button
+                              class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                              type="button"
+                              id="dropdownMenuButton3"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                            >
+                              <i class="fas fa-cog"></i>
+                            </button>
+                            <ul
+                              class="dropdown-menu dropdown-menu-end"
+                              aria-labelledby="dropdownMenuButton3"
+                            >
+                              <li>
+                                <a
+                                  class="dropdown-item edit-user-btn"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#editUserModal"
+                                  data-user-id="3"
+                                  data-user-name="Miko Zamora"
+                                  data-user-email="mz2024@wmsu.edu.ph"
+                                  data-user-role="Faculty"
+                                  ><i class="fas fa-edit me-2 text-warning"></i
+                                  >Edit</a
+                                >
+                              </li>
+                              <li>
+                                <a
+                                  class="dropdown-item activate-user-btn"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#confirmUserStatusModal"
+                                  data-user-id="3"
+                                  data-user-name="Miko Zamora"
+                                  data-action="activate"
+                                  ><i
+                                    class="fas fa-user-check me-2 text-success"
+                                  ></i
+                                  >Activate</a
+                                >
+                              </li>
+                              <li><hr class="dropdown-divider" /></li>
+                              <li>
+                                <a
+                                  class="dropdown-item delete-user-btn text-danger"
+                                  href="#"
+                                  data-bs-toggle="modal"
+                                  data-bs-target="#confirmUserDeleteModal"
+                                  data-user-id="3"
+                                  data-user-name="Miko Zamora"
+                                  ><i class="fas fa-trash-alt me-2"></i
+                                  >Delete</a
+                                >
+                              </li>
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                      <!-- Add other users similarly (dynamically) -->
+                      <tr>
+                        <td>Admin Test</td>
+                        <td>admin@wmsu.edu.ph</td>
+                        <td>Admin</td>
+                        <td class="text-center">
+                          Active</span>
+                        </td>
+                        <td class="text-center">
+                          <div class="dropdown">
+                            <button
+                              class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                              type="button"
+                              id="dropdownMenuButtonAdmin"
+                              data-bs-toggle="dropdown"
+                              aria-expanded="false"
+                              disabled
+                            >
+                              <!-- Example: Disable actions for self/super admin -->
+                              <i class="fas fa-cog"></i>
+                            </button>
+                            <ul
+                              class="dropdown-menu dropdown-menu-end"
+                              aria-labelledby="dropdownMenuButtonAdmin"
+                            >
+                              <!-- Actions might be limited for admins -->
+                            </ul>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
                   
                 <!-- ACTIVITY LOG VIEW -->
                 <div id="activity-log-view" class="main-view" style="display: none;">
