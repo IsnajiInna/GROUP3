@@ -272,7 +272,7 @@ $(document).ready(function () {
        
         setTimeout(() => {
             // Adjust path
-            window.location.href = '../../../index.html'; 
+            window.location.href = '../index.html'; 
         }, 500);
     });
 
