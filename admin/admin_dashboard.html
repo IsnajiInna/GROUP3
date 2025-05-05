@@ -1925,14 +1925,8 @@ SN003..."
                     </div>
                   </div>
                 </div>
-                <!-- End Tab Content -->
               </div>
-              <!-- End Card Body -->
             </div>
-            <!-- End Card -->
-
-            <!-- MODALS specific to this view -->
-            <!-- Reject Reason Modal -->
             <div
               class="modal fade"
               id="rejectReasonModal"
@@ -1997,7 +1991,52 @@ SN003..."
               </div>
             </div>
 
-                    
+                    <!-- Request Details Modal (Example Structure) -->
+            <div
+              class="modal fade"
+              id="requestDetailsModal"
+              tabindex="-1"
+              aria-labelledby="requestDetailsModalLabel"
+              aria-hidden="true"
+            >
+              <div
+                class="modal-dialog modal-lg modal-dialog-centered modal-dialog-scrollable"
+              >
+                <!-- Larger, scrollable -->
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="requestDetailsModalLabel">
+                      <i class="fas fa-info-circle me-2"></i>Request/Borrow
+                      Details
+                    </h5>
+                    <button
+                      type="button"
+                      class="btn-close"
+                      data-bs-dismiss="modal"
+                      aria-label="Close"
+                    ></button>
+                  </div>
+                  <div class="modal-body" id="requestDetailsBody">
+                    <!-- Content will be loaded here by JavaScript -->
+                    <div class="text-center p-5">
+                      <span class="spinner-border spinner-border-sm"></span>
+                      Loading details...
+                    </div>
+                  </div>
+                  <div class="modal-footer">
+                    <!-- Contextual actions could go here -->
+                    <button
+                      type="button"
+                      class="btn btn-secondary btn-sm"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
                 <!--  END BORROW REQUESTS VIEW -->
 
 
