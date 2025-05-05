@@ -958,6 +958,140 @@ SN003..."
               </div>
             </div>
 
+                    <!-- 2. Edit Equipment Type Info Modal -->
+            <div
+              class="modal fade"
+              id="editEquipmentModal"
+              tabindex="-1"
+              aria-labelledby="editEquipmentModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <!-- Larger modal -->
+                <div class="modal-content">
+                  <form id="editEquipmentForm">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="editEquipmentModalLabel">
+                        <i class="fas fa-edit me-2"></i>Edit Equipment Type Info
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Hidden input for the actual Equipment Type ID from database -->
+                      <input
+                        type="hidden"
+                        id="editEquipId"
+                        name="equipmentId"
+                      />
+
+                      <div class="row g-3">
+                        <div class="col-md-4">
+                          <label for="editEquipCode" class="form-label"
+                            >Item Code</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            id="editEquipCode"
+                            name="item_code"
+                            readonly
+                            disabled
+                          />
+                          <!-- Readonly -->
+                          <div class="form-text">
+                            Item code cannot be changed.
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <label for="editEquipName" class="form-label"
+                            >Equipment Name
+                            <span class="text-danger">*</span></label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            id="editEquipName"
+                            name="name"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="editEquipCategory" class="form-label"
+                            >Category <span class="text-danger">*</span></label
+                          >
+                          <select
+                            class="form-select form-select-sm"
+                            id="editEquipCategory"
+                            name="category"
+                            required
+                          >
+                            <option value="" disabled>
+                              Select category...
+                            </option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Projector">Projector</option>
+                            <option value="Cable">Cable</option>
+                            <option value="Mouse">Mouse</option>
+                            <option value="Keyboard">Keyboard</option>
+                            <option value="UPS">UPS</option>
+                            <option value="Other">Other</option>
+                            <!-- Populate dynamically -->
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="editEquipBrand" class="form-label"
+                            >Brand / Manufacturer</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            id="editEquipBrand"
+                            name="brand"
+                          />
+                        </div>
+                        <div class="col-12">
+                          <label for="editEquipDescription" class="form-label"
+                            >Description / Notes (Optional)</label
+                          >
+                          <textarea
+                            class="form-control form-control-sm"
+                            id="editEquipDescription"
+                            name="description"
+                            rows="3"
+                          ></textarea>
+                        </div>
+                        <div class="col-12 alert alert-info alert-sm py-2">
+                          <small
+                            ><i class="fas fa-info-circle me-1"></i> Note: Total
+                            quantity and individual item details (serials,
+                            status) are managed via the 'Manage Stock'
+                            action.</small
+                          >
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-sm"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fas fa-save me-1"></i> Save Changes
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
                 
                 <!--  NEW: BORROW REQUESTS VIEW   -->
                 <div id="borrow-requests-view" class="main-view" style="display: none;">
