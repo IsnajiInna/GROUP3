@@ -3786,92 +3786,251 @@ SN003..."
           </div>
 
                 <!-- NOTIFICATIONS VIEW -->
-                <div id="notifications-view" class="main-view" style="display: none;">
-                    <div class="card content-panel">
-                        <div class="card-body">
-                            <h3 class="text-center mb-4 fw-bold form-title">Notifications</h3>
-                            <div class="d-flex justify-content-between align-items-center mb-3 flex-wrap gap-2">
-                                <div> <button class="btn btn-sm btn-outline-primary"><i
-                                            class="fas fa-check-double me-1"></i> Mark all as read</button> </div>
-                                <div class="d-flex gap-2"> <select class="form-select form-select-sm w-auto">
-                                        <option selected>Filter by Type...</option>
-                                        <option value="request">Borrow Request</option>
-                                        <option value="return">Item Return</option>
-                                        <option value="overdue">Overdue Item</option>
-                                        <option value="system">System Alert</option>
-                                    </select> <select class="form-select form-select-sm w-auto">
-                                        <option selected>Show: Unread</option>
-                                        <option value="all">Show: All</option>
-                                        <option value="read">Show: Read</option>
-                                    </select> </div>
-                            </div>
-                            <ul class="list-group list-group-flush notification-list">
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-start bg-light-subtle">
-                                    <div>
-                                        <div class="fw-bold"><i class="fas fa-clipboard-list text-primary me-2"></i>New
-                                            Borrow Request</div> <small>Student 'Nurhana Aminulla' requested item '#M01
-                                            A4Tech Mouse'.</small>
-                                    </div>
-                                    <div class="text-end"> <small class="text-muted d-block mb-1">3 hours ago</small>
-                                        <button class="btn btn-sm btn-outline-secondary p-1 lh-1"
-                                            title="Mark as read"><i class="far fa-envelope-open"></i></button> <a
-                                            href="#borrow-requests-view" data-tab-target="pending-tab"
-                                            class="btn btn-sm btn-outline-primary p-1 lh-1 sidebar-link view-notification-link"
-                                            title="View Request"><i class="fas fa-eye"></i></a> </div>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-start bg-light-subtle">
-                                    <div>
-                                        <div class="fw-bold"><i
-                                                class="fas fa-exclamation-triangle text-danger me-2"></i>Overdue Item
-                                            Alert</div> <small>Item '#P01 Epson Projector' borrowed by 'Miko Zamora' is
-                                            now overdue.</small>
-                                    </div>
-                                    <div class="text-end"> <small class="text-muted d-block mb-1">1 day ago</small>
-                                        <button class="btn btn-sm btn-outline-secondary p-1 lh-1"
-                                            title="Mark as read"><i class="far fa-envelope-open"></i></button> <a
-                                            href="#borrow-requests-view" data-tab-target="approved-tab"
-                                            class="btn btn-sm btn-outline-primary p-1 lh-1 sidebar-link view-notification-link"
-                                            title="View Details"><i class="fas fa-eye"></i></a> </div>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-muted">
-                                    <div>
-                                        <div class="fw-normal"><i class="fas fa-undo me-2"></i>Item Returned</div>
-                                        <small>Item '#M01 A4Tech Mouse' was returned by 'Jelord Bojos'.</small>
-                                    </div>
-                                    <div class="text-end"> <small class="d-block mb-1">2 days ago</small> <a
-                                            href="#borrowed-items-view"
-                                            class="btn btn-sm btn-outline-secondary p-1 lh-1 sidebar-link"
-                                            title="View History"><i class="fas fa-history"></i></a> </div>
-                                </li>
-                                <li
-                                    class="list-group-item list-group-item-action d-flex justify-content-between align-items-start text-muted">
-                                    <div>
-                                        <div class="fw-normal"><i
-                                                class="fas fa-check-circle text-success me-2"></i>Request Approved</div>
-                                        <small>Request for '#K01 A4Tech Keyboard' (Jelord Bojos) was approved.</small>
-                                    </div>
-                                    <div class="text-end"> <small class="d-block mb-1">3 days ago</small> <a
-                                            href="#borrow-requests-view" data-tab-target="approved-tab"
-                                            class="btn btn-sm btn-outline-secondary p-1 lh-1 sidebar-link view-notification-link"
-                                            title="View Details"><i class="fas fa-history"></i></a> </div>
-                                </li>
-                            </ul>
-                            <nav aria-label="Notification navigation" class="d-flex justify-content-end mt-3">
-                                <ul class="pagination pagination-sm">
-                                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"
-                                            aria-disabled="true">Prev</a></li>
-                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
+                <div id="notifications-view" class="main-view" style="display: block">
+            <!-- Changed display for visibility -->
+            <div class="card content-panel border-0 shadow-sm">
+              <div
+                class="card-header bg-light border-bottom d-flex justify-content-between align-items-center"
+              >
+                <h4 class="mb-0 fw-bold form-title">Notifications</h4>
+                <!-- Add other header actions if needed -->
+              </div>
+              <div class="card-body">
+                <!-- Filters and Bulk Actions -->
+                <div class="row mb-3 gy-2 gx-3 align-items-center">
+                  <div class="col-auto">
+                    <button
+                      id="markAllNotificationsRead"
+                      class="btn btn-sm btn-outline-primary"
+                    >
+                      <i class="fas fa-check-double me-1"></i> Mark all as read
+                    </button>
+                    <!-- Optional: Add Delete Read/All button here with confirmation -->
+                  </div>
+                  <div class="col-auto ms-auto">
+                    <!-- Pushes filters to the right -->
+                    <label for="notificationTypeFilter" class="visually-hidden"
+                      >Filter by Type</label
+                    >
+                    <select
+                      id="notificationTypeFilter"
+                      class="form-select form-select-sm w-auto d-inline-block"
+                    >
+                      <option value="" selected>All Types</option>
+                      <option value="request">Borrow Request</option>
+                      <option value="return">Item Return</option>
+                      <option value="overdue">Overdue Item</option>
+                      <option value="approved">Request Approved</option>
+                      <option value="denied">Request Denied</option>
+                      <option value="system">System Alert</option>
+                      <!-- Populate types dynamically if possible -->
+                    </select>
+                  </div>
+                  <div class="col-auto">
+                    <label
+                      for="notificationStatusFilter"
+                      class="visually-hidden"
+                      >Filter by Status</label
+                    >
+                    <select
+                      id="notificationStatusFilter"
+                      class="form-select form-select-sm w-auto d-inline-block"
+                    >
+                      <option value="unread" selected>Show: Unread</option>
+                      <option value="all">Show: All</option>
+                      <option value="read">Show: Read</option>
+                    </select>
+                  </div>
+                  <div class="col-auto">
+                    <button
+                      id="clearNotificationFilters"
+                      class="btn btn-sm btn-secondary"
+                      title="Clear Filters"
+                    >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
                 </div>
+
+                <!-- Notification List -->
+                <ul class="list-group list-group-flush notification-list">
+                  <!-- Example: Unread Notification (Clickable) -->
+                  <a
+                    href="#borrow-requests-view"
+                    data-tab-target="pending-tab"
+                    data-notification-id="n1"
+                    class="list-group-item list-group-item-action notification-item notification-unread d-flex justify-content-between align-items-start p-3"
+                  >
+                    <!-- Visual indicator for unread -->
+                    <div class="notification-indicator"></div>
+                    <!-- Main content -->
+                    <div class="flex-grow-1 me-3">
+                      <div class="fw-bold mb-1 d-flex align-items-center">
+                        <i
+                          class="fas fa-clipboard-list text-primary me-2 fs-5"
+                        ></i>
+                        <span>New Borrow Request</span>
+                      </div>
+                      <small class="text-muted notification-details"
+                        >Student 'Nurhana Aminulla' requested item '#M01 A4Tech
+                        Mouse'.</small
+                      >
+                    </div>
+                    <!-- Timestamp and Action Hint -->
+                    <div class="text-end text-nowrap">
+                      <small class="text-muted d-block mb-1">3 hours ago</small>
+                      <span
+                        class="badge bg-primary-subtle text-primary-emphasis rounded-pill"
+                        title="Click to view & mark read"
+                      >
+                        View <i class="fas fa-arrow-right ms-1"></i>
+                      </span>
+                    </div>
+                  </a>
+
+                  <!-- Example: Unread Overdue Notification (Clickable) -->
+                  <a
+                    href="#borrow-requests-view"
+                    data-tab-target="approved-tab"
+                    data-notification-id="n2"
+                    class="list-group-item list-group-item-action notification-item notification-unread d-flex justify-content-between align-items-start p-3"
+                  >
+                    <div class="notification-indicator"></div>
+                    <div class="flex-grow-1 me-3">
+                      <div class="fw-bold mb-1 d-flex align-items-center">
+                        <i
+                          class="fas fa-exclamation-triangle text-danger me-2 fs-5"
+                        ></i>
+                        <span>Overdue Item Alert</span>
+                      </div>
+                      <small class="text-muted notification-details"
+                        >Item '#P01 Epson Projector' borrowed by 'Miko Zamora'
+                        is now overdue.</small
+                      >
+                    </div>
+                    <div class="text-end text-nowrap">
+                      <small class="text-muted d-block mb-1">1 day ago</small>
+                      <span
+                        class="badge bg-primary-subtle text-primary-emphasis rounded-pill"
+                        title="Click to view & mark read"
+                      >
+                        View <i class="fas fa-arrow-right ms-1"></i>
+                      </span>
+                    </div>
+                  </a>
+
+                  <!-- Example: Read Notification -->
+                  <a
+                    href="#borrowed-items-view"
+                    data-notification-id="n3"
+                    class="list-group-item list-group-item-action notification-item notification-read text-muted d-flex justify-content-between align-items-start p-3"
+                  >
+                    <!-- No indicator -->
+                    <div class="flex-grow-1 me-3">
+                      <div class="mb-1 d-flex align-items-center">
+                        <!-- Not bold -->
+                        <i class="fas fa-undo text-secondary me-2 fs-5"></i>
+                        <span>Item Returned</span>
+                      </div>
+                      <small class="notification-details"
+                        >Item '#M01 A4Tech Mouse' was returned by 'Jelord
+                        Bojos'.</small
+                      >
+                    </div>
+                    <div class="text-end text-nowrap">
+                      <small class="d-block mb-1">2 days ago</small>
+                      <span
+                        class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill"
+                        title="View history"
+                      >
+                        History <i class="fas fa-history ms-1"></i>
+                      </span>
+                    </div>
+                  </a>
+
+                  <!-- Example: Read Notification -->
+                  <a
+                    href="#borrow-requests-view"
+                    data-tab-target="approved-tab"
+                    data-notification-id="n4"
+                    class="list-group-item list-group-item-action notification-item notification-read text-muted d-flex justify-content-between align-items-start p-3"
+                  >
+                    <div class="flex-grow-1 me-3">
+                      <div class="mb-1 d-flex align-items-center">
+                        <!-- Not bold -->
+                        <i
+                          class="fas fa-check-circle text-success me-2 fs-5"
+                        ></i>
+                        <span>Request Approved</span>
+                      </div>
+                      <small class="notification-details"
+                        >Request for '#K01 A4Tech Keyboard' (Jelord Bojos) was
+                        approved.</small
+                      >
+                    </div>
+                    <div class="text-end text-nowrap">
+                      <small class="d-block mb-1">3 days ago</small>
+                      <span
+                        class="badge bg-secondary-subtle text-secondary-emphasis rounded-pill"
+                        title="View details"
+                      >
+                        Details <i class="fas fa-eye ms-1"></i>
+                      </span>
+                    </div>
+                  </a>
+
+                  <!-- Add more notifications dynamically -->
+
+                  <!-- Empty State Message -->
+                  <li
+                    class="list-group-item text-center text-muted"
+                    id="noNotificationsMessage"
+                    style="display: none"
+                  >
+                    <i class="fas fa-bell-slash me-2"></i> No notifications
+                    found.
+                  </li>
+                </ul>
+
+                <!-- Pagination and Info -->
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2"
+                >
+                  <div class="text-muted">
+                    Showing <span id="notifStartEntry">1</span>-<span
+                      id="notifEndEntry"
+                      >4</span
+                    >
+                    of <span id="notifTotalEntries">15</span> notifications
+                    <!-- Update these IDs dynamically -->
+                  </div>
+                  <nav aria-label="Notification navigation">
+                    <ul class="pagination pagination-sm mb-0">
+                      <li class="page-item disabled">
+                        <a
+                          class="page-link"
+                          href="#"
+                          tabindex="-1"
+                          aria-disabled="true"
+                          >Prev</a
+                        >
+                      </li>
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">2</a>
+                      </li>
+                      <!-- Add more page items dynamically -->
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+          </div>
 
                 <!-- SETTINGS VIEW -->
                 <div id="settings-view" class="main-view" style="display: none;">
