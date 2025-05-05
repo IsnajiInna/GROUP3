@@ -1,91 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CCSIELS Admin Panel</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/admindash_style.css"> 
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/admindash_style.css" />
+  </head>
 
-</head>
-
-<body>
+  <body>
     <!--            SIDEBAR               -->
     <div class="dashboard-layout">
-        <div class="overlay"></div>
-        <nav id="sidebar">
-            <div class="sidebar-header">
-                <h3>Admin Panel</h3>
-            </div>
+      <div class="overlay"></div>
+      <nav id="sidebar">
+        <div class="sidebar-header">
+          <h3>Admin Panel</h3>
+        </div>
 
-            <ul class="list-unstyled components">
-                <li class="active">
-                    <a href="#dashboard-view" class="sidebar-link">
-                        <i class="fas fa-tachometer-alt fa-fw me-2"></i>Dashboard
-                    </a>
-                </li>
-                <li>
+        <ul class="list-unstyled components">
+          <li class="active">
+            <a href="#dashboard-view" class="sidebar-link">
+              <i class="fas fa-tachometer-alt fa-fw me-2"></i>Dashboard
+            </a>
+          </li>
+          <li>
+            <a href="#manage-equipment-view" class="sidebar-link">
+              <i class="fas fa-tools fa-fw me-2"></i>Manage Equipment
+            </a>
+          </li>
+          <li>
+            <a href="#borrow-requests-view" class="sidebar-link">
+              <i class="fas fa-clipboard-list fa-fw me-2"></i>Borrow Requests
+            </a>
+          </li>
+          <li>
+            <a href="#borrowed-items-view" class="sidebar-link">
+              <i class="fas fa-box-open fa-fw me-2"></i>Borrowed Items Log
+            </a>
+          </li>
+          <li>
+            <a href="#user-management-view" class="sidebar-link">
+              <i class="fas fa-users-cog fa-fw me-2"></i>User Management
+            </a>
+          </li>
+          <li>
+            <a href="#activity-log-view" class="sidebar-link">
+              <i class="fas fa-history fa-fw me-2"></i>Activity Log
+            </a>
+          </li>
+          <li>
+            <a href="#notifications-view" class="sidebar-link">
+              <i class="fas fa-bell fa-fw me-2"></i>Notifications
+            </a>
+          </li>
+        </ul>
 
-                    <a href="#manage-equipment-view" class="sidebar-link">
-                        <i class="fas fa-tools fa-fw me-2"></i>Manage Equipment
-                    </a>
-                </li>
-                <li>
-                    <a href="#borrow-requests-view" class="sidebar-link">
-                        <i class="fas fa-clipboard-list fa-fw me-2"></i>Borrow Requests
-                    </a>
-                </li>
-                <li>
-                    <a href="#borrowed-items-view" class="sidebar-link">
-                        <i class="fas fa-box-open fa-fw me-2"></i>Borrowed Items Log
-                    </a>
-                </li>
-                <li>
-                    <a href="#user-management-view" class="sidebar-link">
-                        <i class="fas fa-users-cog fa-fw me-2"></i>User Management
-                    </a>
-                </li>
-                <li>
-                    <a href="#activity-log-view" class="sidebar-link">
-                        <i class="fas fa-history fa-fw me-2"></i>Activity Log
-                    </a>
-                </li>
-                <li>
-                    <a href="#notifications-view" class="sidebar-link">
-                        <i class="fas fa-bell fa-fw me-2"></i>Notifications
-                    </a>
-                </li>
-            </ul>
+        <ul class="list-unstyled bottom-links">
+          <li>
+            <a href="#settings-view" class="sidebar-link">
+              <i class="fas fa-cog fa-fw me-2"></i>Settings
+            </a>
+          </li>
+          <li>
+            <!-- UPDATED: Logout triggers modal -->
+            <a
+              href="#"
+              id="logout-link"
+              class="sidebar-link"
+              data-bs-toggle="modal"
+              data-bs-target="#logoutConfirmationModal"
+            >
+              <i class="fas fa-sign-out-alt fa-fw me-2"></i>Log out
+            </a>
+          </li>
+        </ul>
+      </nav>
 
-            <ul class="list-unstyled bottom-links">
-                <li>
-                    <a href="#settings-view" class="sidebar-link">
-                        <i class="fas fa-cog fa-fw me-2"></i>Settings
-                    </a>
-                </li>
-                <li>
-                    <!-- UPDATED: Logout triggers modal -->
-                    <a href="#" id="logout-link" class="sidebar-link" data-bs-toggle="modal"
-                        data-bs-target="#logoutConfirmationModal">
-                        <i class="fas fa-sign-out-alt fa-fw me-2"></i>Log out
-                    </a>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- CONTENT WRAPPER -->
-        <div id="content-wrapper">
-            <!-- Improved Top Navbar -->
+      <!-- CONTENT WRAPPER -->
+      <div id="content-wrapper">
+        <!-- Improved Top Navbar -->
         <nav
           id="top-navbar"
           class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top shadow-sm"
         >
-                <div class="container-fluid">
+          <div class="container-fluid">
             <!-- Mobile Sidebar Toggle Button -->
             <button
               type="button"
@@ -95,13 +103,13 @@
             >
               <i class="fas fa-align-left"></i>
             </button>
-                    <!-- Desktop Logo -->
+
+            <!-- Desktop Logo -->
             <a
               class="navbar-brand d-none d-lg-block py-1"
               href="#dashboard-view"
             >
-                       
-                        <!-- Added padding py-1 -->
+              <!-- Added padding py-1 -->
               <img
                 src="images/Group 3 Logo.png"
                 alt="CCSIELS Logo"
@@ -110,7 +118,8 @@
               />
               <!-- UPDATE PATH -->
             </a>
-                   <!-- Mobile Page Title -->
+
+            <!-- Mobile Page Title (Optional: Update with JS) -->
             <span
               class="navbar-brand d-lg-none fs-6 fw-bold me-auto"
               id="mobilePageTitle"
@@ -145,7 +154,8 @@
                   </button>
                 </div>
               </form>
-                        <!-- Notifications Dropdown (Improved) -->
+
+              <!-- Notifications Dropdown (Improved) -->
               <div class="nav-item dropdown me-2 me-lg-3">
                 <!-- Added dropdown class -->
                 <a
@@ -169,7 +179,7 @@
                     <span class="visually-hidden">New notifications</span>
                   </span>
                 </a>
-                            <!-- Dropdown Menu -->
+                <!-- Dropdown Menu -->
                 <ul
                   class="dropdown-menu dropdown-menu-end shadow-sm border-0 mt-2"
                   aria-labelledby="navbarNotificationsDropdown"
@@ -289,142 +299,217 @@
         </nav>
         <!-- End Improved Top Navbar -->
 
-            <!--MAIN CONTENT-->
-            <main id="main-content" class="p-3 p-md-4">
+        <!--MAIN CONTENT-->
+        <main id="main-content" class="p-3 p-md-4">
+          <!-- DASHBOARD VIEW (Improved) -->
+          <div id="dashboard-view" class="main-view" style="display: block">
+            <!-- Ensure it's visible -->
+            <h1 class="h3 mb-4 fw-bold">
+              Welcome, <span id="dashboardWelcomeName">Admin</span>!
+            </h1>
+            <!-- Added ID for dynamic name -->
 
-                <!--DASHBOARD VIEW-->
-                <div id="dashboard-view" class="main-view">
-                    <h1 class="h3 mb-4">Welcome, Admin!</h1>
-                    <!-- Dashboard cards -->
-                    <div class="row g-3 mb-4">
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card dashboard-card bg-primary text-white h-100">
-                                <div class="card-body d-flex align-items-center"> <i class="fas fa-box fa-3x me-3"></i>
-                                    <div>
-                                        <div class="fs-1 fw-bold">6</div>
-                                        <div class="text-uppercase small">Total Items</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card dashboard-card bg-success text-white h-100">
-                                <div class="card-body d-flex align-items-center"> <i
-                                        class="fas fa-people-carry fa-3x me-3"></i>
-                                    <div>
-                                        <div class="fs-1 fw-bold">4</div>
-                                        <div class="text-uppercase small">Total Items Borrowed</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card dashboard-card bg-warning text-dark h-100">
-                                <div class="card-body d-flex align-items-center"> <i
-                                        class="fas fa-clock fa-3x me-3"></i>
-                                    <div>
-                                        <div class="fs-1 fw-bold">2</div>
-                                        <div class="text-uppercase small">Pending Requests</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-xl-3">
-                            <div class="card dashboard-card bg-danger text-white h-100">
-                                <div class="card-body d-flex align-items-center"> <i
-                                        class="fas fa-exclamation-triangle fa-3x me-3"></i>
-                                    <div>
-                                        <div class="fs-1 fw-bold">1</div>
-                                        <div class="text-uppercase small">Overdue Item</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+            <!-- Dashboard cards -->
+            <div class="row g-3 mb-4">
+              <div class="col-md-6 col-xl-3">
+                <div class="card dashboard-card bg-primary text-white h-100">
+                  <div class="card-body d-flex align-items-center">
+                    <i class="fas fa-box fa-3x me-3"></i>
+                    <div>
+                      <div class="fs-1 fw-bold">6</div>
+                      <div class="text-uppercase small">Total Items</div>
                     </div>
-                    <!-- Recent Activity -->
-                    <div class="card content-panel mb-4">
-                        <div class="card-header">
-                            <h5 class="mb-0">Recent Activity</h5>
-                        </div>
-                        <div class="card-body">
-                            <ul class="list-group list-group-flush activity-log">
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div><i class="fas fa-clock text-warning me-2"></i> New request from 'Nurhana
-                                        Aminulla' for item '#M01 A4Tech Mouse'.</div> <span class="text-muted small">3
-                                        hours ago</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div><i class="fas fa-clock text-warning me-2"></i> New request from 'Jelord Bojos'
-                                        for item '#L01 Lenovo Laptop'.</div> <span
-                                        class="text-muted small">Yesterday</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div><i class="fas fa-undo text-secondary me-2"></i> Item '#M01 A4Tech Mouse'
-                                        returned by 'Jelord Bojos'.</div> <span class="text-muted small">2 days
-                                        ago</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div><i class="fas fa-check-circle text-success me-2"></i> Request for '#K01 A4Tech
-                                        Keyboard' approved for 'Jelord Bojos'.</div> <span class="text-muted small">3
-                                        days ago</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div><i class="fas fa-exclamation-triangle text-danger me-2"></i> Item '#P01 Epson
-                                        Projector' borrowed by 'Miko Zamora' is now overdue.</div> <span
-                                        class="text-muted small">4 days ago</span>
-                                </li>
-                                <li class="list-group-item d-flex justify-content-between align-items-center">
-                                    <div><i class="fas fa-plus-circle text-info me-2"></i> New equipment '#U01 APC UPS'
-                                        added to inventory.</div> <span class="text-muted small">5 days ago</span>
-                                </li>
-                            </ul>
-                            <div class="text-center mt-3"> <a href="#activity-log-view"
-                                    class="btn btn-sm btn-outline-secondary sidebar-link">View Full Activity Log</a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Quick Actions -->
-                    <div class="card content-panel">
-                        <div class="card-header">
-                            <h5 class="mb-0">Quick Actions: Pending Requests</h5>
-                        </div>
-                        <div class="card-body quick-actions-list">
-                            <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
-                                <div>
-                                    <div class="fw-bold">#L01 Lenovo Laptop</div> <small class="text-muted">Requested
-                                        by: Jelord Bojos</small><br> <small class="text-muted">Purpose: Project
-                                        Defense</small>
-                                </div>
-                                <div class="btn-group btn-group-sm" role="group"> <button type="button"
-                                        class="btn btn-success approve-request-btn" data-request-id="P1"
-                                        title="Approve Request"><i class="fas fa-check"></i></button> <button
-                                        type="button" class="btn btn-danger reject-request-btn" data-request-id="P1"
-                                        title="Reject Request"><i class="fas fa-times"></i></button>
-                                 </div>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2">
-                                <div>
-                                    <div class="fw-bold">#M01 A4Tech Mouse</div> <small class="text-muted">Requested by:
-                                        Nurhana Aminulla</small><br> <small class="text-muted">Purpose: Lab
-                                        Activity</small>
-                                </div>
-                                <div class="btn-group btn-group-sm" role="group"> <button type="button"
-                                        class="btn btn-success approve-request-btn" data-request-id="P2"
-                                        title="Approve Request"><i class="fas fa-check"></i></button> <button
-                                        type="button" class="btn btn-danger reject-request-btn" data-request-id="P2"
-                                        title="Reject Request"><i class="fas fa-times"></i></button>
-                                     </div>
-                            </div>
-                            <div class="text-center mt-3"> <a href="#borrow-requests-view"
-                                    class="btn btn-sm btn-outline-primary sidebar-link">View All Borrow Requests</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="background-logo"></div>
+                  </div>
                 </div>
-
-                <!-- MANAGE EQUIPMENT VIEW  -->
+              </div>
+              <div class="col-md-6 col-xl-3">
+                <div class="card dashboard-card bg-success text-white h-100">
+                  <div class="card-body d-flex align-items-center">
+                    <i class="fas fa-people-carry fa-3x me-3"></i>
+                    <div>
+                      <div class="fs-1 fw-bold">4</div>
+                      <div class="text-uppercase small">
+                        Total Items Borrowed
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                <div class="card dashboard-card bg-warning text-dark h-100">
+                  <div class="card-body d-flex align-items-center">
+                    <i class="fas fa-clock fa-3x me-3"></i>
+                    <div>
+                      <div class="fs-1 fw-bold">2</div>
+                      <div class="text-uppercase small">Pending Requests</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3">
+                <div class="card dashboard-card bg-danger text-white h-100">
+                  <div class="card-body d-flex align-items-center">
+                    <i class="fas fa-exclamation-triangle fa-3x me-3"></i>
+                    <div>
+                      <div class="fs-1 fw-bold">1</div>
+                      <div class="text-uppercase small">Overdue Item</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Recent Activity -->
+            <div class="card content-panel mb-4">
+              <div class="card-header">
+                <h5 class="mb-0">Recent Activity</h5>
+              </div>
+              <div class="card-body">
+                <ul class="list-group list-group-flush activity-log">
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <i class="fas fa-clock text-warning me-2"></i> New request
+                      from 'Nurhana Aminulla' for item '#M01 A4Tech Mouse'.
+                    </div>
+                    <span class="text-muted small">3 hours ago</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <i class="fas fa-clock text-warning me-2"></i> New request
+                      from 'Jelord Bojos' for item '#L01 Lenovo Laptop'.
+                    </div>
+                    <span class="text-muted small">Yesterday</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <i class="fas fa-undo text-secondary me-2"></i> Item '#M01
+                      A4Tech Mouse' returned by 'Jelord Bojos'.
+                    </div>
+                    <span class="text-muted small">2 days ago</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <i class="fas fa-check-circle text-success me-2"></i>
+                      Request for '#K01 A4Tech Keyboard' approved for 'Jelord
+                      Bojos'.
+                    </div>
+                    <span class="text-muted small">3 days ago</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <i
+                        class="fas fa-exclamation-triangle text-danger me-2"
+                      ></i>
+                      Item '#P01 Epson Projector' borrowed by 'Miko Zamora' is
+                      now overdue.
+                    </div>
+                    <span class="text-muted small">4 days ago</span>
+                  </li>
+                  <li
+                    class="list-group-item d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <i class="fas fa-plus-circle text-info me-2"></i> New
+                      equipment '#U01 APC UPS' added to inventory.
+                    </div>
+                    <span class="text-muted small">5 days ago</span>
+                  </li>
+                </ul>
+                <div class="text-center mt-3">
+                  <a
+                    href="#activity-log-view"
+                    class="btn btn-sm btn-outline-secondary sidebar-link"
+                    >View Full Activity Log</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Quick Actions -->
+            <div class="card content-panel">
+              <div class="card-header">
+                <h5 class="mb-0">Quick Actions: Pending Requests</h5>
+              </div>
+              <div class="card-body quick-actions-list">
                 <div
+                  class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2"
+                >
+                  <div>
+                    <div class="fw-bold">#L01 Lenovo Laptop</div>
+                    <small class="text-muted">Requested by: Jelord Bojos</small
+                    ><br />
+                    <small class="text-muted">Purpose: Project Defense</small>
+                  </div>
+                  <div class="btn-group btn-group-sm" role="group">
+                    <button
+                      type="button"
+                      class="btn btn-success approve-request-btn"
+                      data-request-id="P1"
+                      title="Approve Request"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger reject-request-btn"
+                      data-request-id="P1"
+                      title="Reject Request"
+                    >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div
+                  class="d-flex justify-content-between align-items-center border-bottom pb-2 mb-2"
+                >
+                  <div>
+                    <div class="fw-bold">#M01 A4Tech Mouse</div>
+                    <small class="text-muted"
+                      >Requested by: Nurhana Aminulla</small
+                    ><br />
+                    <small class="text-muted">Purpose: Lab Activity</small>
+                  </div>
+                  <div class="btn-group btn-group-sm" role="group">
+                    <button
+                      type="button"
+                      class="btn btn-success approve-request-btn"
+                      data-request-id="P2"
+                      title="Approve Request"
+                    >
+                      <i class="fas fa-check"></i>
+                    </button>
+                    <button
+                      type="button"
+                      class="btn btn-danger reject-request-btn"
+                      data-request-id="P2"
+                      title="Reject Request"
+                    >
+                      <i class="fas fa-times"></i>
+                    </button>
+                  </div>
+                </div>
+                <div class="text-center mt-3">
+                  <a
+                    href="#borrow-requests-view"
+                    class="btn btn-sm btn-outline-primary sidebar-link"
+                    >View All Borrow Requests</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="background-logo"></div>
+          </div>
+
+          <!-- MANAGE EQUIPMENT VIEW  -->
+          <div
             id="manage-equipment-view"
             class="main-view"
             style="display: block"
@@ -443,7 +528,7 @@
                   <i class="fas fa-plus me-1"></i> Add New Equipment Type
                 </button>
               </div>
-                <div class="card-body">
+              <div class="card-body">
                 <!-- Filters Section -->
                 <div class="card bg-light border-light mb-4">
                   <div class="card-body">
@@ -483,7 +568,7 @@
                             <!-- Populate dynamically -->
                           </select>
                         </div>
-                          <!-- Availability Filter -->
+                        <!-- Availability Filter -->
                         <div class="col-md-6 col-lg-3">
                           <label
                             for="equipmentAvailabilityFilter"
@@ -529,7 +614,7 @@
                   </div>
                 </div>
 
-                    <!-- Equipment Table -->
+                <!-- Equipment Table -->
                 <div class="table-responsive">
                   <table
                     class="table table-striped table-hover table-sm align-middle equipment-table"
@@ -562,8 +647,12 @@
                         </td>
                         <td>Laptop</td>
                         <td class="text-center">3</td>
-                        <td class="text-center">2</td>
-                        <td class="text-center">1</td>
+                        <td class="text-center">
+                          <span class="badge text-bg-success">2</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="badge text-bg-info">1</span>
+                        </td>
                         <td class="text-center">
                           <span class="badge text-bg-light text-dark">0</span>
                         </td>
@@ -630,9 +719,15 @@
                         </td>
                         <td>Projector</td>
                         <td class="text-center">5</td>
-                        <td class="text-center">4</td>
-                        <td class="text-center">0</td>
-                        <td class="text-center">1</td>
+                        <td class="text-center">
+                          <span class="badge text-bg-success">4</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="badge text-bg-info">0</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="badge text-bg-warning">1</span>
+                        </td>
                         <td class="text-center">
                           <div class="dropdown">
                             <button
@@ -696,9 +791,15 @@
                         </td>
                         <td>Mouse</td>
                         <td class="text-center">2</td>
-                        <td class="text-center">0</td>
-                        <td class="text-center">2</td>
-                        <td class="text-center">0</td>
+                        <td class="text-center">
+                          <span class="badge text-bg-secondary">0</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="badge text-bg-info">2</span>
+                        </td>
+                        <td class="text-center">
+                          <span class="badge text-bg-light text-dark">0</span>
+                        </td>
                         <td class="text-center">
                           <div class="dropdown">
                             <button
@@ -767,7 +868,7 @@
                   </table>
                 </div>
 
-                    <!-- Pagination and Info -->
+                <!-- Pagination and Info -->
                 <div
                   class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2"
                 >
@@ -798,7 +899,14 @@
                   </nav>
                 </div>
               </div>
+              <!-- End card-body -->
             </div>
+            <!-- End card -->
+
+            <!-- ============================================================== -->
+            <!--          MANAGE EQUIPMENT MODALS                           -->
+            <!-- ============================================================== -->
+
             <!-- 1. Add New Equipment Type Modal -->
             <div
               class="modal fade"
@@ -958,7 +1066,7 @@ SN003..."
               </div>
             </div>
 
-                    <!-- 2. Edit Equipment Type Info Modal -->
+            <!-- 2. Edit Equipment Type Info Modal -->
             <div
               class="modal fade"
               id="editEquipmentModal"
@@ -1092,7 +1200,7 @@ SN003..."
               </div>
             </div>
 
-                    <!-- 3. Manage Stock Modal (Individual Items) -->
+            <!-- 3. Manage Stock Modal (Individual Items) -->
             <div
               class="modal fade"
               id="manageStockModal"
@@ -1210,7 +1318,7 @@ SN003..."
                       </div>
                     </div>
 
-                      <!-- Table of Existing Stock Items -->
+                    <!-- Table of Existing Stock Items -->
                     <div class="table-responsive">
                       <table
                         class="table table-bordered table-striped table-sm align-middle"
@@ -1257,7 +1365,9 @@ SN003..."
                           </tr>
                           <tr>
                             <td>LP124</td>
-                            <td>Borrowed</td>
+                            <td>
+                              <span class="badge text-bg-info">Borrowed</span>
+                            </td>
                             <td>Jelord Bojos (Due: 03/25/2024)</td>
                             <td>01/15/2024</td>
                             <td></td>
@@ -1328,12 +1438,15 @@ SN003..."
                     >
                       Close
                     </button>
+                    <!-- Optional: Add a button to export stock list -->
                   </div>
+                  <!-- Note: A separate modal might be needed for editing an individual stock item -->
+                  <!-- <div class="modal fade" id="editStockItemModal" ...> Edit Stock Item Form ... </div> -->
                 </div>
               </div>
             </div>
 
-                    <!-- 4. Confirm Delete Equipment Type Modal -->
+            <!-- 4. Confirm Delete Equipment Type Modal -->
             <div
               class="modal fade"
               id="confirmDeleteEquipmentModal"
@@ -1415,10 +1528,10 @@ SN003..."
               </div>
             </div>
           </div>
-                <!-- End main-view -->
-                
-                <!--  NEW: BORROW REQUESTS VIEW   -->
-                <div
+          <!-- End main-view -->
+
+          <!-- BORROW REQUESTS VIEW -->
+          <div
             id="borrow-requests-view"
             class="main-view"
             style="display: block"
@@ -1507,6 +1620,8 @@ SN003..."
                     <h4 class="mb-3 tab-pane-title visually-hidden">
                       Pending Approvals
                     </h4>
+                    <!-- Hide redundant title -->
+                    <!-- Filters for Pending -->
                     <div class="row mb-3 gx-2 gy-2">
                       <div class="col-md-4">
                         <input
@@ -1626,7 +1741,7 @@ SN003..."
                     </div>
                   </div>
 
-                    <!-- ==================== Approved/Borrowed Tab Pane ==================== -->
+                  <!-- ==================== Approved/Borrowed Tab Pane ==================== -->
                   <div
                     class="tab-pane fade"
                     id="approved-tab-pane"
@@ -1820,7 +1935,7 @@ SN003..."
                     </div>
                   </div>
 
-                    <!-- ==================== Rejected Tab Pane ==================== -->
+                  <!-- ==================== Rejected Tab Pane ==================== -->
                   <div
                     class="tab-pane fade"
                     id="rejected-tab-pane"
@@ -1925,8 +2040,14 @@ SN003..."
                     </div>
                   </div>
                 </div>
+                <!-- End Tab Content -->
               </div>
+              <!-- End Card Body -->
             </div>
+            <!-- End Card -->
+
+            <!-- MODALS specific to this view -->
+            <!-- Reject Reason Modal -->
             <div
               class="modal fade"
               id="rejectReasonModal"
@@ -1991,7 +2112,7 @@ SN003..."
               </div>
             </div>
 
-                    <!-- Request Details Modal (Example Structure) -->
+            <!-- Request Details Modal (Example Structure) -->
             <div
               class="modal fade"
               id="requestDetailsModal"
@@ -2036,112 +2157,12 @@ SN003..."
                 </div>
               </div>
             </div>
+
+            <!-- Include the Record Return Modal (#recordReturnModal) from previous step if not already present -->
           </div>
-                <!--  END BORROW REQUESTS VIEW -->
+          <!-- End main-view -->
 
-
-                <!-- BORROWED ITEMS LOG (History) VIEW -->
-                <div id="borrowed-items-view" class="main-view" style="display: none;">
-                    <div class="card content-panel">
-                        <div class="card-body">
-                            <h3 class="text-center mb-4 fw-bold form-title">Borrowing & Return Log</h3>
-                            <div class="mb-3">
-                                <div class="input-group"> <span class="input-group-text"><i
-                                            class="fas fa-search"></i></span> <input type="text" class="form-control"
-                                        placeholder="Search log by item, student, date..."> </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle history-log-table">
-                                    <thead class="table-dark-green">
-                                        <tr>
-                                            <th>Student Name</th>
-                                            <th>Item Name & Code</th>
-                                            <th>Purpose</th>
-                                            <th>Borrowed</th>
-                                            <th>Due</th>
-                                            <th>Returned</th>
-                                            <th>Borrower Return Notes</th>
-                                            <th>Status</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Jelord Bojos</td>
-                                            <td>A4Tech Mouse (#M01)</td>
-                                            <td>Lab Activity</td>
-                                            <td>3/05/2025</td>
-                                            <td>3/06/2025</td>
-                                            <td>3/06/2025</td>
-                                            <td>Returned in good condition.</td>
-                                            <td><span class="badge bg-secondary-light text-secondary">Returned</span>
-                                            </td>
-                                            <td><span class="text-muted fst-italic">Completed</span></td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jelord Bojos</td>
-                                            <td>A4Tech Keyboard (#K01)</td>
-                                            <td>Thesis Typing</td>
-                                            <td>3/18/2025</td>
-                                            <td>3/25/2025</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td><span class="badge bg-success-light text-success">Borrowed</span></td>
-                                            <td> <button class="btn btn-sm btn-primary action-btn confirm-return-btn"
-                                                    title="Confirm Return" data-bs-toggle="modal"
-                                                    data-bs-target="#viewReturnDetailsModal" data-borrow-id="B1"
-                                                    data-item-name="#K01 A4Tech Keyboard"
-                                                    data-student-name="Jelord Bojos" data-return-condition="Good"
-                                                    data-return-notes="Returned on time, working fine."> <i
-                                                        class="fas fa-undo"></i> Confirm Return </button> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Miko Zamora</td>
-                                            <td>Epson Projector (#P01)</td>
-                                            <td>Org Event</td>
-                                            <td>3/10/2025</td>
-                                            <td>3/15/2025</td>
-                                            <td>-</td>
-                                            <td>-</td>
-                                            <td><span class="badge bg-danger-light text-danger">Overdue</span></td>
-                                            <td> <button class="btn btn-sm btn-primary action-btn confirm-return-btn"
-                                                    title="Confirm Return" data-bs-toggle="modal"
-                                                    data-bs-target="#viewReturnDetailsModal" data-borrow-id="B2"
-                                                    data-item-name="#P01 Epson Projector"
-                                                    data-student-name="Miko Zamora" data-return-condition="Fair"
-                                                    data-return-notes="Returned late. Minor scuffs noted."> <i
-                                                        class="fas fa-undo"></i> Confirm Return </button> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Merson Cael</td>
-                                            <td>Lenovo Laptop (#L01)</td>
-                                            <td>Research</td>
-                                            <td>3/16/2025</td>
-                                            <td>3/21/2025</td>
-                                            <td>3/19/2025</td>
-                                            <td>Slight scratch on lid, noted by borrower.</td>
-                                            <td><span class="badge bg-secondary-light text-secondary">Returned</span>
-                                            </td>
-                                            <td><span class="text-muted fst-italic">Completed</span></td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <nav aria-label="Borrowed items history navigation" class="d-flex justify-content-end mt-3">
-                                <ul class="pagination pagination-sm">
-                                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"
-                                            aria-disabled="true">Prev</a></li>
-                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-                <!-- END BORROWED ITEMS LOG VIEW -->
-                
-                <!-- BORROWED ITEMS LOG (History) VIEW -->
+          <!-- BORROWED ITEMS LOG (History) VIEW -->
           <div
             id="borrowed-items-view"
             class="main-view"
@@ -2276,7 +2297,7 @@ SN003..."
                           <i class="text-muted">Returned in good condition.</i>
                         </td>
                         <td class="text-center">
-                          Returned
+                          <span class="badge text-bg-secondary">Returned</span>
                         </td>
                         <td class="text-center">
                           <span class="text-muted fst-italic">Completed</span>
@@ -2291,7 +2312,7 @@ SN003..."
                         <td><i class="text-muted">Pending</i></td>
                         <td><i class="text-muted">Pending</i></td>
                         <td class="text-center">
-                          Borrowed
+                          <span class="badge text-bg-success">Borrowed</span>
                         </td>
                         <td class="text-center">
                           <button
@@ -2317,7 +2338,7 @@ SN003..."
                         <td><i class="text-muted">Pending</i></td>
                         <td class="text-center">
                           <!-- Warning for Overdue -->
-                          Overdue
+                          <span class="badge text-bg-warning">Overdue</span>
                         </td>
                         <td class="text-center">
                           <button
@@ -2346,12 +2367,14 @@ SN003..."
                           >
                         </td>
                         <td class="text-center">
-                          Returned
+                          <span class="badge text-bg-secondary">Returned</span>
                         </td>
                         <td class="text-center">
                           <span class="text-muted fst-italic">Completed</span>
                         </td>
                       </tr>
+                      <!-- Add more rows dynamically -->
+                      <!-- Empty state row -->
                       <tr id="borrowLogEmptyRow" style="display: none">
                         <td colspan="9" class="text-center text-muted py-3">
                           <i class="fas fa-folder-open me-2"></i> No borrowing
@@ -2396,7 +2419,11 @@ SN003..."
                   </nav>
                 </div>
               </div>
+              <!-- End card-body -->
             </div>
+            <!-- End card -->
+
+            <!-- MODAL for Recording Return -->
             <div
               class="modal fade"
               id="recordReturnModal"
@@ -2513,9 +2540,8 @@ SN003..."
             </div>
           </div>
 
-
-                <!-- USER MANAGEMENT VIEW -->
-                <div
+          <!-- USER MANAGEMENT VIEW -->
+          <div
             id="user-management-view"
             class="main-view"
             style="display: block"
@@ -2584,7 +2610,7 @@ SN003..."
                   </div>
                 </div>
 
-                  <!-- User Table -->
+                <!-- User Table -->
                 <div class="table-responsive">
                   <table
                     class="table table-hover table-striped table-sm align-middle user-management-table"
@@ -2614,7 +2640,7 @@ SN003..."
                         <td>Student</td>
                         <td class="text-center">
                           <!-- Standard Bootstrap badge -->
-                          Active</span>
+                          <span class="badge text-bg-success">Active</span>
                         </td>
                         <td class="text-center">
                           <!-- Actions Dropdown -->
@@ -2684,7 +2710,7 @@ SN003..."
                         <td>jb2024@wmsu.edu.ph</td>
                         <td>Student</td>
                         <td class="text-center">
-                          Active</span>
+                          <span class="badge text-bg-success">Active</span>
                         </td>
                         <td class="text-center">
                           <div class="dropdown">
@@ -2753,7 +2779,7 @@ SN003..."
                         <td>Faculty</td>
                         <td class="text-center">
                           <!-- Standard Bootstrap badge for inactive -->
-                          Inactive
+                          <span class="badge text-bg-secondary">Inactive</span>
                         </td>
                         <td class="text-center">
                           <div class="dropdown">
@@ -2822,7 +2848,7 @@ SN003..."
                         <td>admin@wmsu.edu.ph</td>
                         <td>Admin</td>
                         <td class="text-center">
-                          Active</span>
+                          <span class="badge text-bg-success">Active</span>
                         </td>
                         <td class="text-center">
                           <div class="dropdown">
@@ -2850,219 +2876,7 @@ SN003..."
                   </table>
                 </div>
 
-                  <!-- Confirm User Status Change Modal (Activate/Deactivate) -->
-            <div
-              class="modal fade"
-              id="confirmUserStatusModal"
-              tabindex="-1"
-              aria-labelledby="confirmUserStatusModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-sm modal-dialog-centered">
-                <!-- Smaller modal for confirmation -->
-                <div class="modal-content">
-                  <form id="confirmUserStatusForm">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="confirmUserStatusModalLabel">
-                        Confirm Action
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <!-- Hidden inputs for ID and Action -->
-                      <input
-                        type="hidden"
-                        id="confirmStatusUserId"
-                        name="userId"
-                      />
-                      <input
-                        type="hidden"
-                        id="confirmStatusAction"
-                        name="action"
-                      />
-
-                      <p>
-                        Are you sure you want to
-                        <strong id="statusActionVerb"></strong> the user
-                        <strong id="confirmStatusUserName"></strong>?
-                      </p>
-                      <!-- Example: Add reason field for deactivation -->
-                      <div
-                        id="deactivationReasonGroup"
-                        class="mb-3"
-                        style="display: none"
-                      >
-                        <label for="deactivationReason" class="form-label"
-                          >Reason (Optional)</label
-                        >
-                        <textarea
-                          class="form-control form-control-sm"
-                          id="deactivationReason"
-                          name="reason"
-                          rows="2"
-                        ></textarea>
-                      </div>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary btn-sm"
-                        data-bs-dismiss="modal"
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        type="submit"
-                        class="btn btn-sm"
-                        id="confirmStatusActionButton"
-                      >
-                        <!-- JS will set text and class (e.g., btn-success/btn-info) -->
-                        Confirm Action
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-
-            <!-- Confirm User Delete Modal -->
-            <div
-              class="modal fade"
-              id="confirmUserDeleteModal"
-              tabindex="-1"
-              aria-labelledby="confirmUserDeleteModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-sm modal-dialog-centered">
-                <!-- Smaller modal -->
-                <div class="modal-content">
-                  <form id="confirmUserDeleteForm">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="confirmUserDeleteModalLabel">
-                        <i
-                          class="fas fa-exclamation-triangle text-danger me-2"
-                        ></i
-                        >Confirm Deletion
-                      </h5>
-                      <button
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Close"
-                      ></button>
-                    </div>
-                    <div class="modal-body">
-                      <!-- Hidden input for ID -->
-                      <input
-                        type="hidden"
-                        id="confirmDeleteUserId"
-                        name="userId"
-                      />
-
-                      <p>
-                        Are you sure you want to permanently delete the user
-                        <strong id="confirmDeleteUserName"></strong>?
-                      </p>
-                      <p class="text-danger">
-                        <small>This action cannot be undone.</small>
-                      </p>
-                    </div>
-                    <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-secondary btn-sm"
-                        data-bs-dismiss="modal"
-                      >
-                        Cancel
-                      </button>
-                      <button type="submit" class="btn btn-danger btn-sm">
-                        <i class="fas fa-trash-alt me-1"></i> Delete User
-                      </button>
-                    </div>
-                  </form>
-                </div>
-              </div>
-            </div>
-          </div>
-                  
-                <!-- ACTIVITY LOG VIEW -->
-                <div id="activity-log-view" class="main-view" style="display: none;">
-                    <div class="card content-panel">
-                        <div class="card-body">
-                            <h3 class="text-center mb-4 fw-bold form-title">System Activity Log</h3>
-                            <div class="mb-3 d-flex justify-content-between align-items-center flex-wrap gap-2">
-                                <div> <label for="logFilterUserSimple" class="form-label visually-hidden">Filter by
-                                        User</label> <select id="logFilterUserSimple"
-                                        class="form-select form-select-sm d-inline-block w-auto me-2">
-                                        <option value="">All Users</option>
-                                        <option value="1">Admin Test</option>
-                                        <option value="2">Jelord Bojos</option>
-                                        <option value="3">Nurhana Aminulla</option>
-                                    </select> </div>
-                                <div class="input-group input-group-sm w-auto"> <span class="input-group-text"><i
-                                            class="fas fa-search"></i></span> <input type="text" class="form-control"
-                                        placeholder="Search log details..."> </div>
-                            </div>
-                            <ul class="list-group list-group-flush activity-log-list">
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-start flex-wrap gap-2">
-                                    <div> <i class="fas fa-clock text-muted me-1"></i> <strong>Nurhana Aminulla</strong>
-                                        requested item <strong>#M01 A4Tech Mouse</strong>. </div> <small
-                                        class="text-muted timestamp">2025-03-22 10:15:30</small>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-start flex-wrap gap-2">
-                                    <div> <i class="fas fa-clock text-muted me-1"></i> <strong>Jelord Bojos</strong>
-                                        requested item <strong>#L01 Lenovo Laptop</strong>. </div> <small
-                                        class="text-muted timestamp">2025-03-21 14:05:11</small>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-start flex-wrap gap-2">
-                                    <div> <i class="fas fa-undo text-muted me-1"></i> <strong>Jelord Bojos</strong>
-                                        returned item <strong>#M01 A4Tech Mouse</strong>. </div> <small
-                                        class="text-muted timestamp">2025-03-20 09:00:05</small>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-start flex-wrap gap-2">
-                                    <div> <i class="fas fa-check-circle text-success me-1"></i> <strong>Admin
-                                            Test</strong> approved request for <strong>#K01 A4Tech Keyboard</strong>
-                                        (requested by Jelord Bojos). </div> <small
-                                        class="text-muted timestamp">2025-03-19 11:30:00</small>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-start flex-wrap gap-2">
-                                    <div> <i class="fas fa-exclamation-triangle text-danger me-1"></i> Item <strong>#P01
-                                            Epson Projector</strong> (borrowed by Miko Zamora) was marked as
-                                        <strong>Overdue</strong>. </div> <small class="text-muted timestamp">2025-03-17
-                                        16:00:00</small>
-                                </li>
-                                <li
-                                    class="list-group-item d-flex justify-content-between align-items-start flex-wrap gap-2">
-                                    <div> <i class="fas fa-plus-circle text-info me-1"></i> <strong>Admin Test</strong>
-                                        added new equipment <strong>#U01 APC UPS</strong> to inventory. </div> <small
-                                        class="text-muted timestamp">2025-03-15 08:55:10</small>
-                                </li>
-                            </ul>
-                            <nav aria-label="Activity log navigation" class="d-flex justify-content-end mt-3">
-                                <ul class="pagination pagination-sm">
-                                    <li class="page-item disabled"><a class="page-link" href="#" tabindex="-1"
-                                            aria-disabled="true">Prev</a></li>
-                                    <li class="page-item active" aria-current="page"><a class="page-link" href="#">1</a>
-                                    </li>
-                                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                                    <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-
-                  <!-- Pagination and Info -->
+                <!-- Pagination and Info -->
                 <div
                   class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2"
                 >
@@ -3333,7 +3147,7 @@ SN003..."
               </div>
             </div>
 
-                <!-- Confirm User Status Change Modal (Activate/Deactivate) -->
+            <!-- Confirm User Status Change Modal (Activate/Deactivate) -->
             <div
               class="modal fade"
               id="confirmUserStatusModal"
@@ -3785,8 +3599,8 @@ SN003..."
             </div>
           </div>
 
-                <!-- NOTIFICATIONS VIEW -->
-                <div id="notifications-view" class="main-view" style="display: block">
+          <!-- NOTIFICATIONS VIEW -->
+          <div id="notifications-view" class="main-view" style="display: block">
             <!-- Changed display for visibility -->
             <div class="card content-panel border-0 shadow-sm">
               <div
@@ -4032,8 +3846,8 @@ SN003..."
             </div>
           </div>
 
-                <!-- SETTINGS VIEW -->
-                <div id="settings-view" class="main-view" style="display: none">
+          <!-- SETTINGS VIEW -->
+          <div id="settings-view" class="main-view" style="display: none">
             <div class="card content-panel">
               <div class="card-body p-4 p-md-5">
                 <h3 class="text-center mb-4 fw-bold form-title">Settings</h3>
