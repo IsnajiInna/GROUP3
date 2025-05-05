@@ -483,6 +483,51 @@
                             <!-- Populate dynamically -->
                           </select>
                         </div>
+                          <!-- Availability Filter -->
+                        <div class="col-md-6 col-lg-3">
+                          <label
+                            for="equipmentAvailabilityFilter"
+                            class="form-label"
+                            >Availability</label
+                          >
+                          <select
+                            class="form-select form-select-sm"
+                            id="equipmentAvailabilityFilter"
+                          >
+                            <option value="" selected>Any Availability</option>
+                            <option value="available">
+                              Has Available Stock
+                            </option>
+                            <option value="none_available">
+                              None Available (Fully Borrowed/0 Stock)
+                            </option>
+                            <option value="has_overdue">
+                              Has Overdue Item(s)
+                            </option>
+                          </select>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="col-md-6 col-lg-2 text-end">
+                          <button
+                            type="submit"
+                            class="btn btn-primary btn-sm me-1"
+                            title="Apply Filters"
+                          >
+                            <i class="fas fa-filter"></i>
+                          </button>
+                          <button
+                            type="reset"
+                            class="btn btn-secondary btn-sm"
+                            id="resetEquipmentFiltersBtn"
+                            title="Clear Filters"
+                          >
+                            <i class="fas fa-times"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </div>
 
                 
                 <!--  NEW: BORROW REQUESTS VIEW   -->
