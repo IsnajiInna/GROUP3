@@ -110,15 +110,41 @@
               />
               <!-- UPDATE PATH -->
             </a>
-                    <div class="ms-auto d-flex align-items-center">
-                        <form class="d-none d-md-flex me-3 flex-grow-1 flex-md-grow-0" role="search">
-                            <div class="input-group input-group-sm">
-                                <span class="input-group-text bg-light border-end-0" id="global-search-icon"><i
-                                        class="fas fa-search"></i></span>
-                                <input class="form-control form-control-sm border-start-0" type="search"
-                                    placeholder="Search..." aria-label="Search" aria-describedby="global-search-icon">
-                            </div>
-                        </form>
+                   <!-- Mobile Page Title -->
+            <span
+              class="navbar-brand d-lg-none fs-6 fw-bold me-auto"
+              id="mobilePageTitle"
+              >Dashboard</span
+            >
+
+            <!-- Right Aligned Items Wrapper -->
+            <div class="ms-auto d-flex align-items-center">
+              <!-- Global Search (Responsive & Usable) -->
+              <form
+                class="d-flex me-2 me-lg-3 flex-grow-0 flex-sm-grow-1"
+                role="search"
+                id="globalSearchForm"
+                action="/search-results"
+                method="GET"
+              >
+                <div class="input-group input-group-sm border rounded">
+                  <input
+                    class="form-control form-control-sm border-0"
+                    type="search"
+                    name="query"
+                    placeholder="Global Search..."
+                    aria-label="Search"
+                  />
+                  <button
+                    class="btn btn-link text-secondary border-0 px-2"
+                    type="submit"
+                    id="global-search-button"
+                    aria-label="Submit Search"
+                  >
+                    <i class="fas fa-search"></i>
+                  </button>
+                </div>
+              </form>
                         <div class="nav-item me-3">
                             <a class="nav-link position-relative sidebar-link" href="#notifications-view"
                                 title="Notifications" id="top-nav-notifications">
