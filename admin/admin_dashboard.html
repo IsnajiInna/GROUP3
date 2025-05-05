@@ -4033,375 +4033,864 @@ SN003..."
           </div>
 
                 <!-- SETTINGS VIEW -->
-                <div id="settings-view" class="main-view" style="display: none;">
-                    <div class="card content-panel">
-                        <div class="card-body p-4 p-md-5">
-                            <h3 class="text-center mb-4 fw-bold form-title">Settings</h3>
-                            <form>
-                                <h5 class="mb-3 section-title">Profile Settings</h5>
-                                <div class="row g-3 mb-4">
-                                    <div class="col-md-6"> <label for="adminName" class="form-label">Admin Name</label>
-                                        <input type="text" class="form-control" id="adminName" value="Admin Test"
-                                            placeholder="Your Name"> </div>
-                                    <div class="col-md-6"> <label for="adminEmail" class="form-label">Email
-                                            Address</label> <input type="email" class="form-control" id="adminEmail"
-                                            value="admin@test" placeholder="your.email@example.com" readonly> <small
-                                            class="text-muted">Email cannot be changed here.</small> </div>
-                                    <div class="col-md-6"> <label for="adminNewPassword" class="form-label">New Password
-                                            (Optional)</label> <input type="password" class="form-control"
-                                            id="adminNewPassword" placeholder="Leave blank to keep current"> </div>
-                                    <div class="col-md-6"> <label for="adminConfirmPassword" class="form-label">Confirm
-                                            New Password</label> <input type="password" class="form-control"
-                                            id="adminConfirmPassword" placeholder="Confirm new password"> </div>
-                                    <div class="col-12"> <label for="adminAvatar" class="form-label">Change
-                                            Avatar</label> <input class="form-control" type="file" id="adminAvatar">
-                                    </div>
-                                </div>
-                                <hr>
-                                <h5 class="mb-3 mt-4 section-title">System Preferences</h5>
-                                <div class="row g-3 mb-4">
-                                    <div class="col-md-6"> <label for="borrowLimit" class="form-label">Max Items Per
-                                            User</label> <input type="number" class="form-control" id="borrowLimit"
-                                            value="3" min="1"> </div>
-                                    <div class="col-md-6"> <label for="defaultLoanDays" class="form-label">Default
-                                            Borrow Duration (Days)</label> <input type="number" class="form-control"
-                                            id="defaultLoanDays" value="7" min="1"> </div>
-                                </div>
-                                <hr>
-                                <h5 class="mb-3 mt-4 section-title">Notification Preferences</h5>
-                                <div class="form-check mb-2"> <input class="form-check-input" type="checkbox" value=""
-                                        id="notifyNewRequest" checked> <label class="form-check-label"
-                                        for="notifyNewRequest"> Notify on New Borrow Request </label> </div>
-                                <div class="form-check mb-2"> <input class="form-check-input" type="checkbox" value=""
-                                        id="notifyOverdueAdmin" checked> <label class="form-check-label"
-                                        for="notifyOverdueAdmin"> Notify Admin on Overdue Items </label> </div>
-                                <div class="form-check mb-4"> <input class="form-check-input" type="checkbox" value=""
-                                        id="notifyUserReturn"> <label class="form-check-label" for="notifyUserReturn">
-                                        Notify User on Item Return Confirmation </label> </div>
-                                <div class="text-center mt-4"> <button type="submit"
-                                        class="btn btn-success btn-lg fw-bold"><i class="fas fa-save me-2"></i>Save
-                                        Settings</button> </div>
-                            </form>
-                        </div>
+                <div id="settings-view" class="main-view" style="display: none">
+            <div class="card content-panel">
+              <div class="card-body p-4 p-md-5">
+                <h3 class="text-center mb-4 fw-bold form-title">Settings</h3>
+                <form>
+                  <h5 class="mb-3 section-title">Profile Settings</h5>
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <label for="adminName" class="form-label"
+                        >Admin Name</label
+                      >
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="adminName"
+                        value="Admin Test"
+                        placeholder="Your Name"
+                      />
                     </div>
-                </div>
+                    <div class="col-md-6">
+                      <label for="adminEmail" class="form-label"
+                        >Email Address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="adminEmail"
+                        value="admin@test"
+                        placeholder="your.email@example.com"
+                        readonly
+                      />
+                      <small class="text-muted"
+                        >Email cannot be changed here.</small
+                      >
+                    </div>
+                    <div class="col-md-6">
+                      <label for="adminNewPassword" class="form-label"
+                        >New Password (Optional)</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="adminNewPassword"
+                        placeholder="Leave blank to keep current"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="adminConfirmPassword" class="form-label"
+                        >Confirm New Password</label
+                      >
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="adminConfirmPassword"
+                        placeholder="Confirm new password"
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label for="adminAvatar" class="form-label"
+                        >Change Avatar</label
+                      >
+                      <input
+                        class="form-control"
+                        type="file"
+                        id="adminAvatar"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <h5 class="mb-3 mt-4 section-title">System Preferences</h5>
+                  <div class="row g-3 mb-4">
+                    <div class="col-md-6">
+                      <label for="borrowLimit" class="form-label"
+                        >Max Items Per User</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="borrowLimit"
+                        value="3"
+                        min="1"
+                      />
+                    </div>
+                    <div class="col-md-6">
+                      <label for="defaultLoanDays" class="form-label"
+                        >Default Borrow Duration (Days)</label
+                      >
+                      <input
+                        type="number"
+                        class="form-control"
+                        id="defaultLoanDays"
+                        value="7"
+                        min="1"
+                      />
+                    </div>
+                  </div>
+                  <hr />
+                  <h5 class="mb-3 mt-4 section-title">
+                    Notification Preferences
+                  </h5>
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="notifyNewRequest"
+                      checked
+                    />
+                    <label class="form-check-label" for="notifyNewRequest">
+                      Notify on New Borrow Request
+                    </label>
+                  </div>
+                  <div class="form-check mb-2">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="notifyOverdueAdmin"
+                      checked
+                    />
+                    <label class="form-check-label" for="notifyOverdueAdmin">
+                      Notify Admin on Overdue Items
+                    </label>
+                  </div>
+                  <div class="form-check mb-4">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      value=""
+                      id="notifyUserReturn"
+                    />
+                    <label class="form-check-label" for="notifyUserReturn">
+                      Notify User on Item Return Confirmation
+                    </label>
+                  </div>
+                  <div class="text-center mt-4">
+                    <button
+                      type="submit"
+                      class="btn btn-success btn-lg fw-bold"
+                    >
+                      <i class="fas fa-save me-2"></i>Save Settings
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
 
-                <!-- Removed old view divs -->
+          <!-- Removed old view divs -->
+        </main>
 
-            </main>
-
-            <!-- Footer -->
-            <footer class="footer mt-auto py-3 text-center">
-                <small>© 2025 CCS Admin Panel | CCSIELS</small>
-            </footer>
-
-        </div> <!--End Content Wrapper -->
-    </div> <!--end dashboard Layout-->
+        <!-- Footer -->
+        <footer class="footer mt-auto py-3 text-center">
+          <small>© 2025 CCS Admin Panel | CCSIELS</small>
+        </footer>
+      </div>
+      <!--End Content Wrapper -->
+    </div>
+    <!--end dashboard Layout-->
 
     <!--                          MODALS                               -->
 
     <!-- Add Equipment Modal -->
-    <div class="modal fade" id="addEquipmentModal" tabindex="-1" aria-labelledby="addEquipmentModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="addEquipmentModalLabel">Add New Equipment</h5> <button type="button"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div
+      class="modal fade"
+      id="addEquipmentModal"
+      tabindex="-1"
+      aria-labelledby="addEquipmentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="addEquipmentModalLabel">
+              Add New Equipment
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="addEquipmentForm">
+              <div class="row g-3">
+                <div class="col-md-6 mb-3">
+                  <label for="addItemName" class="form-label"
+                    >Item name *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="addItemName"
+                    required
+                  />
                 </div>
-                <div class="modal-body">
-                    <form id="addEquipmentForm">
-                        <div class="row g-3">
-                            <div class="col-md-6 mb-3"> <label for="addItemName" class="form-label">Item name *</label>
-                                <input type="text" class="form-control" id="addItemName" required> </div>
-                            <div class="col-md-6 mb-3"> <label for="addItemCode" class="form-label">Item Code *</label>
-                                <input type="text" class="form-control" id="addItemCode" placeholder="e.g., L04, P06"
-                                    required> <small class="text-muted">Unique identifier for the equipment
-                                    type.</small> </div>
-                            <div class="col-md-6 mb-3"> <label for="addItemCategory" class="form-label">Category
-                                    *</label> <select class="form-select" id="addItemCategory" required>
-                                    <option selected disabled value="">Select Category...</option>
-                                    <option value="laptop">Laptop</option>
-                                    <option value="projector">Projector</option>
-                                    <option value="cable">Cable</option>
-                                    <option value="mouse">Mouse</option>
-                                    <option value="keyboard">Keyboard</option>
-                                    <option value="ups">UPS</option>
-                                    <option value="other">Other</option>
-                                </select> </div>
-                            <div class="col-md-6 mb-3"> <label for="addItemBrand" class="form-label">Brand/Model</label>
-                                <input type="text" class="form-control" id="addItemBrand"> </div>
-                            <div class="col-md-6 mb-3"> <label for="addItemQuantity" class="form-label">Total Quantity
-                                    *</label> <input type="number" class="form-control" id="addItemQuantity" required
-                                    min="1" value="1"> </div>
-                            <div class="col-md-6 mb-3"> <label for="addItemInitialCondition" class="form-label">Initial
-                                    Condition *</label> <select class="form-select" id="addItemInitialCondition"
-                                    required>
-                                    <option selected disabled value="">Select Condition...</option>
-                                    <option value="new">New</option>
-                                    <option value="good">Good</option>
-                                    <option value="fair">Fair</option>
-                                </select> </div>
-                            <div class="col-md-6 mb-3"> <label for="addItemSerial" class="form-label">Serial
-                                    Code(s)</label> <input type="text" class="form-control" id="addItemSerial"
-                                    placeholder="Optional, comma-separated if quantity > 1"> </div>
-                            <div class="col-md-6 mb-3"> <label for="addItemImage" class="form-label">Upload
-                                    Image</label> <input class="form-control" type="file" id="addItemImage"
-                                    accept="image/*"> </div>
-                            <div class="col-12 mb-3"> <label for="addItemRemarks"
-                                    class="form-label">Remarks/Notes</label> <textarea class="form-control"
-                                    id="addItemRemarks" rows="3"></textarea> </div>
-                        </div>
-                    </form>
+                <div class="col-md-6 mb-3">
+                  <label for="addItemCode" class="form-label"
+                    >Item Code *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="addItemCode"
+                    placeholder="e.g., L04, P06"
+                    required
+                  />
+                  <small class="text-muted"
+                    >Unique identifier for the equipment type.</small
+                  >
                 </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cancel</button> <button type="submit" form="addEquipmentForm"
-                        class="btn btn-success">Add Equipment</button> </div>
-            </div>
+                <div class="col-md-6 mb-3">
+                  <label for="addItemCategory" class="form-label"
+                    >Category *</label
+                  >
+                  <select class="form-select" id="addItemCategory" required>
+                    <option selected disabled value="">
+                      Select Category...
+                    </option>
+                    <option value="laptop">Laptop</option>
+                    <option value="projector">Projector</option>
+                    <option value="cable">Cable</option>
+                    <option value="mouse">Mouse</option>
+                    <option value="keyboard">Keyboard</option>
+                    <option value="ups">UPS</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="addItemBrand" class="form-label"
+                    >Brand/Model</label
+                  >
+                  <input type="text" class="form-control" id="addItemBrand" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="addItemQuantity" class="form-label"
+                    >Total Quantity *</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="addItemQuantity"
+                    required
+                    min="1"
+                    value="1"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="addItemInitialCondition" class="form-label"
+                    >Initial Condition *</label
+                  >
+                  <select
+                    class="form-select"
+                    id="addItemInitialCondition"
+                    required
+                  >
+                    <option selected disabled value="">
+                      Select Condition...
+                    </option>
+                    <option value="new">New</option>
+                    <option value="good">Good</option>
+                    <option value="fair">Fair</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="addItemSerial" class="form-label"
+                    >Serial Code(s)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="addItemSerial"
+                    placeholder="Optional, comma-separated if quantity > 1"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="addItemImage" class="form-label"
+                    >Upload Image</label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="addItemImage"
+                    accept="image/*"
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="addItemRemarks" class="form-label"
+                    >Remarks/Notes</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="addItemRemarks"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="submit"
+              form="addEquipmentForm"
+              class="btn btn-success"
+            >
+              Add Equipment
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- View Request Details Modal -->
-    <div class="modal fade" id="viewRequestDetailsModal" tabindex="-1" aria-labelledby="viewRequestDetailsModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewRequestDetailsModalLabel">Request Details</h5> <button type="button"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <dl class="row">
-                        <dt class="col-sm-4">Request ID:</dt>
-                        <dd class="col-sm-8" id="detailRequestId"></dd>
-                        <dt class="col-sm-4">Student:</dt>
-                        <dd class="col-sm-8" id="detailStudentName"></dd>
-                        <dt class="col-sm-4">Item:</dt>
-                        <dd class="col-sm-8" id="detailItemName"></dd>
-                        <dt class="col-sm-4">Date Needed:</dt>
-                        <dd class="col-sm-8" id="detailDateNeeded"></dd>
-                        <dt class="col-sm-4">Return Date:</dt>
-                        <dd class="col-sm-8" id="detailReturnDate"></dd>
-                        <dt class="col-sm-4">Purpose:</dt>
-                        <dd class="col-sm-8" id="detailPurpose" style="white-space: pre-wrap;"></dd>
-                    </dl>
-                </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button> </div>
-            </div>
+    <div
+      class="modal fade"
+      id="viewRequestDetailsModal"
+      tabindex="-1"
+      aria-labelledby="viewRequestDetailsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="viewRequestDetailsModalLabel">
+              Request Details
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <dl class="row">
+              <dt class="col-sm-4">Request ID:</dt>
+              <dd class="col-sm-8" id="detailRequestId"></dd>
+              <dt class="col-sm-4">Student:</dt>
+              <dd class="col-sm-8" id="detailStudentName"></dd>
+              <dt class="col-sm-4">Item:</dt>
+              <dd class="col-sm-8" id="detailItemName"></dd>
+              <dt class="col-sm-4">Date Needed:</dt>
+              <dd class="col-sm-8" id="detailDateNeeded"></dd>
+              <dt class="col-sm-4">Return Date:</dt>
+              <dd class="col-sm-8" id="detailReturnDate"></dd>
+              <dt class="col-sm-4">Purpose:</dt>
+              <dd
+                class="col-sm-8"
+                id="detailPurpose"
+                style="white-space: pre-wrap"
+              ></dd>
+            </dl>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Edit Equipment Modal (General Info) -->
-    <div class="modal fade" id="editEquipmentModal" tabindex="-1" aria-labelledby="editEquipmentModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editEquipmentModalLabel">Edit Equipment General Info</h5> <button
-                        type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div
+      class="modal fade"
+      id="editEquipmentModal"
+      tabindex="-1"
+      aria-labelledby="editEquipmentModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editEquipmentModalLabel">
+              Edit Equipment General Info
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="editEquipmentForm">
+              <input type="hidden" id="editItemId" />
+              <div class="row g-3">
+                <div class="col-md-6 mb-3">
+                  <label for="editItemName" class="form-label"
+                    >Item name *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editItemName"
+                    required
+                  />
                 </div>
-                <div class="modal-body">
-                    <form id="editEquipmentForm"> <input type="hidden" id="editItemId">
-                        <div class="row g-3">
-                            <div class="col-md-6 mb-3"> <label for="editItemName" class="form-label">Item name *</label>
-                                <input type="text" class="form-control" id="editItemName" required> </div>
-                            <div class="col-md-6 mb-3"> <label for="editItemCode" class="form-label">Item code</label>
-                                <input type="text" class="form-control" id="editItemCode" readonly disabled>
-                                <small>Cannot change item code here.</small> </div>
-                            <div class="col-md-6 mb-3"> <label for="editItemCategory" class="form-label">Category
-                                    *</label> <select class="form-select" id="editItemCategory" required>
-                                    <option disabled value="">Select Category</option>
-                                    <option value="laptop">Laptop</option>
-                                    <option value="projector">Projector</option>
-                                    <option value="cable">Cable</option>
-                                    <option value="mouse">Mouse</option>
-                                    <option value="keyboard">Keyboard</option>
-                                    <option value="ups">UPS</option>
-                                    <option value="other">Other</option>
-                                </select> </div>
-                            <div class="col-md-6 mb-3"> <label for="editItemBrand"
-                                    class="form-label">Brand/Model</label> <input type="text" class="form-control"
-                                    id="editItemBrand"> </div>
-                            <div class="col-md-6 mb-3"> <label for="editItemQuantity" class="form-label">Total Quantity
-                                    *</label> <input type="number" class="form-control" id="editItemQuantity" required
-                                    min="0"> </div>
-                            <div class="col-md-6 mb-3"> <label for="editItemSerial" class="form-label">Serial
-                                    Code(s)</label> <input type="text" class="form-control" id="editItemSerial"
-                                    placeholder="Comma-separated"> </div>
-                            <div class="col-md-6 mb-3"> <label class="form-label">Current Image</label>
-                                <div id="editImagePreview" class="mb-2 text-center"
-                                    style="min-height: 100px; border: 1px dashed #ccc; padding: 5px;"> <img src=""
-                                        alt="Current Image" style="max-height: 150px; max-width: 100%; display: none;">
-                                    <span class="text-muted">No image available</span> </div> <label for="editItemImage"
-                                    class="form-label">Change Image (Optional)</label> <input class="form-control"
-                                    type="file" id="editItemImage" accept="image/*">
-                            </div>
-                            <div class="col-12 mb-3"> <label for="editItemRemarks"
-                                    class="form-label">Remarks/Notes</label> <textarea class="form-control"
-                                    id="editItemRemarks" rows="3"></textarea> </div>
-                        </div>
-                    </form>
+                <div class="col-md-6 mb-3">
+                  <label for="editItemCode" class="form-label">Item code</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editItemCode"
+                    readonly
+                    disabled
+                  />
+                  <small>Cannot change item code here.</small>
                 </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button> <button type="button" class="btn btn-primary"
-                        id="saveEquipmentChangesBtn">Save Changes</button> </div>
-            </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editItemCategory" class="form-label"
+                    >Category *</label
+                  >
+                  <select class="form-select" id="editItemCategory" required>
+                    <option disabled value="">Select Category</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="projector">Projector</option>
+                    <option value="cable">Cable</option>
+                    <option value="mouse">Mouse</option>
+                    <option value="keyboard">Keyboard</option>
+                    <option value="ups">UPS</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editItemBrand" class="form-label"
+                    >Brand/Model</label
+                  >
+                  <input type="text" class="form-control" id="editItemBrand" />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editItemQuantity" class="form-label"
+                    >Total Quantity *</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="editItemQuantity"
+                    required
+                    min="0"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label for="editItemSerial" class="form-label"
+                    >Serial Code(s)</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editItemSerial"
+                    placeholder="Comma-separated"
+                  />
+                </div>
+                <div class="col-md-6 mb-3">
+                  <label class="form-label">Current Image</label>
+                  <div
+                    id="editImagePreview"
+                    class="mb-2 text-center"
+                    style="
+                      min-height: 100px;
+                      border: 1px dashed #ccc;
+                      padding: 5px;
+                    "
+                  >
+                    <img
+                      src=""
+                      alt="Current Image"
+                      style="max-height: 150px; max-width: 100%; display: none"
+                    />
+                    <span class="text-muted">No image available</span>
+                  </div>
+                  <label for="editItemImage" class="form-label"
+                    >Change Image (Optional)</label
+                  >
+                  <input
+                    class="form-control"
+                    type="file"
+                    id="editItemImage"
+                    accept="image/*"
+                  />
+                </div>
+                <div class="col-12 mb-3">
+                  <label for="editItemRemarks" class="form-label"
+                    >Remarks/Notes</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="editItemRemarks"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="saveEquipmentChangesBtn"
+            >
+              Save Changes
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- View Stock Details Modal -->
-    <div class="modal fade" id="viewStockDetailsModal" tabindex="-1" aria-labelledby="viewStockDetailsModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-lg">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewStockDetailsModalLabel">Stock Details for <span
-                            id="stockDetailItemName">Item</span></h5> <button type="button" class="btn-close"
-                        data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Detailed status for each individual unit (<strong id="stockDetailItemCode">CODE</strong>):</p>
-                    <div class="table-responsive">
-                        <table class="table table-sm table-bordered">
-                            <thead class="table-light">
-                                <tr>
-                                    <th>Unit ID / Serial #</th>
-                                    <th>Status</th>
-                                    <th>Condition</th>
-                                    <th>Current Borrower</th>
-                                    <th>Due Date</th>
-                                    <th>Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="stockDetailsTableBody"> <!-- Populated by JavaScript --> </tbody>
-                        </table>
-                    </div> <small class="text-muted">*This requires backend integration for actual unit data.</small>
-                </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-sm btn-success"><i
-                            class="fas fa-plus me-1"></i> Add Unit</button> <button type="button"
-                        class="btn btn-secondary" data-bs-dismiss="modal">Close</button> </div>
+    <div
+      class="modal fade"
+      id="viewStockDetailsModal"
+      tabindex="-1"
+      aria-labelledby="viewStockDetailsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="viewStockDetailsModalLabel">
+              Stock Details for <span id="stockDetailItemName">Item</span>
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Detailed status for each individual unit (<strong
+                id="stockDetailItemCode"
+                >CODE</strong
+              >):
+            </p>
+            <div class="table-responsive">
+              <table class="table table-sm table-bordered">
+                <thead class="table-light">
+                  <tr>
+                    <th>Unit ID / Serial #</th>
+                    <th>Status</th>
+                    <th>Condition</th>
+                    <th>Current Borrower</th>
+                    <th>Due Date</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="stockDetailsTableBody">
+                  <!-- Populated by JavaScript -->
+                </tbody>
+              </table>
             </div>
+            <small class="text-muted"
+              >*This requires backend integration for actual unit data.</small
+            >
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-sm btn-success">
+              <i class="fas fa-plus me-1"></i> Add Unit
+            </button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- View Return Details & Confirm Modal -->
-    <div class="modal fade" id="viewReturnDetailsModal" tabindex="-1" aria-labelledby="viewReturnDetailsModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="viewReturnDetailsModalLabel">Confirm Item Return</h5> <button
-                        type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Please confirm the return of item <strong id="viewReturnItemName">Item Name</strong> by <strong
-                            id="viewReturnStudentName">Student</strong>.</p>
-                    <hr>
-                    <h6>Borrower's Return Details:</h6>
-                    <dl class="row mb-0">
-                        <dt class="col-sm-4">Condition:</dt>
-                        <dd class="col-sm-8" id="viewReturnCondition"></dd>
-                        <dt class="col-sm-4">Notes/Reason:</dt>
-                        <dd class="col-sm-8" id="viewReturnNotes" style="white-space: pre-wrap;"></dd>
-                    </dl> <input type="hidden" id="viewReturnBorrowId">
-                </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cancel</button> <button type="button" class="btn btn-primary"
-                        id="confirmReturnAcknowledgeBtn">Acknowledge & Confirm Return</button> </div>
-            </div>
+    <div
+      class="modal fade"
+      id="viewReturnDetailsModal"
+      tabindex="-1"
+      aria-labelledby="viewReturnDetailsModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="viewReturnDetailsModalLabel">
+              Confirm Item Return
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Please confirm the return of item
+              <strong id="viewReturnItemName">Item Name</strong> by
+              <strong id="viewReturnStudentName">Student</strong>.
+            </p>
+            <hr />
+            <h6>Borrower's Return Details:</h6>
+            <dl class="row mb-0">
+              <dt class="col-sm-4">Condition:</dt>
+              <dd class="col-sm-8" id="viewReturnCondition"></dd>
+              <dt class="col-sm-4">Notes/Reason:</dt>
+              <dd
+                class="col-sm-8"
+                id="viewReturnNotes"
+                style="white-space: pre-wrap"
+              ></dd>
+            </dl>
+            <input type="hidden" id="viewReturnBorrowId" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="confirmReturnAcknowledgeBtn"
+            >
+              Acknowledge & Confirm Return
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Edit User Modal -->
-    <div class="modal fade" id="editUserModal" tabindex="-1" aria-labelledby="editUserModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="editUserModalLabel">Edit User</h5> <button type="button"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form id="editUserForm"> <input type="hidden" id="editUserId">
-                        <div class="mb-3"> <label for="editUserName" class="form-label">Full Name</label> <input
-                                type="text" class="form-control" id="editUserName" required> </div>
-                        <div class="mb-3"> <label for="editUserEmail" class="form-label">Email address</label> <input
-                                type="email" class="form-control" id="editUserEmail" required> </div>
-                    </form>
-                </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Close</button> <button type="button" class="btn btn-primary"
-                        id="saveUserChangesBtn">Save changes</button> </div>
-            </div>
+    <div
+      class="modal fade"
+      id="editUserModal"
+      tabindex="-1"
+      aria-labelledby="editUserModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="editUserModalLabel">Edit User</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="editUserForm">
+              <input type="hidden" id="editUserId" />
+              <div class="mb-3">
+                <label for="editUserName" class="form-label">Full Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="editUserName"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="editUserEmail" class="form-label"
+                  >Email address</label
+                >
+                <input
+                  type="email"
+                  class="form-control"
+                  id="editUserEmail"
+                  required
+                />
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="saveUserChangesBtn"
+            >
+              Save changes
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Confirm User Status Change -->
-    <div class="modal fade" id="confirmUserStatusModal" tabindex="-1" aria-labelledby="confirmUserStatusModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmUserStatusModalLabel">Confirm Status Change</h5> <button
-                        type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p>Are you sure you want to <strong id="userStatusAction"></strong> user <strong
-                            id="userStatusName"></strong>?</p> <input type="hidden" id="confirmStatusUserId"> <input
-                        type="hidden" id="confirmStatusAction">
-                </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cancel</button> <button type="button" class="btn btn-primary"
-                        id="confirmUserStatusBtn">Confirm</button> </div>
-            </div>
+    <div
+      class="modal fade"
+      id="confirmUserStatusModal"
+      tabindex="-1"
+      aria-labelledby="confirmUserStatusModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmUserStatusModalLabel">
+              Confirm Status Change
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p>
+              Are you sure you want to
+              <strong id="userStatusAction"></strong> user
+              <strong id="userStatusName"></strong>?
+            </p>
+            <input type="hidden" id="confirmStatusUserId" />
+            <input type="hidden" id="confirmStatusAction" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="confirmUserStatusBtn"
+            >
+              Confirm
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Confirm User Delete -->
-    <div class="modal fade" id="confirmUserDeleteModal" tabindex="-1" aria-labelledby="confirmUserDeleteModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="confirmUserDeleteModalLabel">Confirm User Deletion</h5> <button
-                        type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <p class="text-danger fw-bold">Warning!</p>
-                    <p>Are you sure you want to permanently delete user <strong id="userDeleteName"></strong>?</p>
-                    <p>This action cannot be undone.</p> <input type="hidden" id="confirmDeleteUserId">
-                </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cancel</button> <button type="button" class="btn btn-danger"
-                        id="confirmUserDeleteBtn">Delete User</button> </div>
-            </div>
+    <div
+      class="modal fade"
+      id="confirmUserDeleteModal"
+      tabindex="-1"
+      aria-labelledby="confirmUserDeleteModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="confirmUserDeleteModalLabel">
+              Confirm User Deletion
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="text-danger fw-bold">Warning!</p>
+            <p>
+              Are you sure you want to permanently delete user
+              <strong id="userDeleteName"></strong>?
+            </p>
+            <p>This action cannot be undone.</p>
+            <input type="hidden" id="confirmDeleteUserId" />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="confirmUserDeleteBtn"
+            >
+              Delete User
+            </button>
+          </div>
         </div>
+      </div>
     </div>
 
     <!-- Logout Confirmation Modal -->
-    <div class="modal fade" id="logoutConfirmationModal" tabindex="-1" aria-labelledby="logoutConfirmationModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="logoutConfirmationModalLabel">Confirm Logout</h5> <button type="button"
-                        class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body"> Are you sure you want to log out? </div>
-                <div class="modal-footer"> <button type="button" class="btn btn-secondary"
-                        data-bs-dismiss="modal">Cancel</button> <button type="button" class="btn btn-primary"
-                        id="confirmLogoutBtn">Log Out</button> </div>
-            </div>
+    <div
+      class="modal fade"
+      id="logoutConfirmationModal"
+      tabindex="-1"
+      aria-labelledby="logoutConfirmationModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="logoutConfirmationModalLabel">
+              Confirm Logout
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">Are you sure you want to log out?</div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+            <button type="button" class="btn btn-primary" id="confirmLogoutBtn">
+              Log Out
+            </button>
+          </div>
         </div>
+      </div>
     </div>
-
 
     <!-- Scripts -->
 
     <script src="assets/js/jquery-3.7.1.min.js"></script>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
     <script src="assets/js/script.js"></script>
-
-</body>
-
+  </body>
 </html>
