@@ -767,6 +767,197 @@
                   </table>
                 </div>
 
+                    <!-- Pagination and Info -->
+                <div
+                  class="d-flex justify-content-between align-items-center mt-3 flex-wrap gap-2"
+                >
+                  <div class="text-muted">
+                    Showing <span id="equipStartEntry">1</span>-<span
+                      id="equipEndEntry"
+                      >6</span
+                    >
+                    of <span id="equipTotalEntries">6</span> equipment types
+                    <!-- Update these IDs dynamically -->
+                  </div>
+                  <nav aria-label="Equipment list navigation">
+                    <ul
+                      class="pagination pagination-sm mb-0"
+                      id="equipmentPagination"
+                    >
+                      <li class="page-item disabled">
+                        <a class="page-link" href="#">Prev</a>
+                      </li>
+                      <li class="page-item active" aria-current="page">
+                        <a class="page-link" href="#">1</a>
+                      </li>
+                      <li class="page-item">
+                        <a class="page-link" href="#">Next</a>
+                      </li>
+                      <!-- Add more page items dynamically -->
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            </div>
+            <!-- 1. Add New Equipment Type Modal -->
+            <div
+              class="modal fade"
+              id="addEquipmentModal"
+              tabindex="-1"
+              aria-labelledby="addEquipmentModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg modal-dialog-centered">
+                <!-- Larger modal -->
+                <div class="modal-content">
+                  <form id="addEquipmentForm">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addEquipmentModalLabel">
+                        <i class="fas fa-plus-circle me-2"></i>Add New Equipment
+                        Type
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <div class="row g-3">
+                        <div class="col-md-4">
+                          <label for="addEquipCode" class="form-label"
+                            >Item Code <span class="text-danger">*</span></label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            id="addEquipCode"
+                            name="item_code"
+                            placeholder="e.g., L03, K02"
+                            required
+                          />
+                          <div class="form-text">
+                            Unique code for this equipment type.
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <label for="addEquipName" class="form-label"
+                            >Equipment Name
+                            <span class="text-danger">*</span></label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            id="addEquipName"
+                            name="name"
+                            placeholder="e.g., Dell Latitude 5430, Logitech K120 Keyboard"
+                            required
+                          />
+                        </div>
+                        <div class="col-md-6">
+                          <label for="addEquipCategory" class="form-label"
+                            >Category <span class="text-danger">*</span></label
+                          >
+                          <select
+                            class="form-select form-select-sm"
+                            id="addEquipCategory"
+                            name="category"
+                            required
+                          >
+                            <option value="" disabled selected>
+                              Select category...
+                            </option>
+                            <option value="Laptop">Laptop</option>
+                            <option value="Projector">Projector</option>
+                            <option value="Cable">Cable</option>
+                            <option value="Mouse">Mouse</option>
+                            <option value="Keyboard">Keyboard</option>
+                            <option value="UPS">UPS</option>
+                            <option value="Other">Other</option>
+                            <!-- Populate dynamically -->
+                          </select>
+                        </div>
+                        <div class="col-md-6">
+                          <label for="addEquipBrand" class="form-label"
+                            >Brand / Manufacturer</label
+                          >
+                          <input
+                            type="text"
+                            class="form-control form-control-sm"
+                            id="addEquipBrand"
+                            name="brand"
+                            placeholder="e.g., Dell, Epson, Generic"
+                          />
+                        </div>
+                        <div class="col-12">
+                          <label for="addEquipDescription" class="form-label"
+                            >Description / Notes (Optional)</label
+                          >
+                          <textarea
+                            class="form-control form-control-sm"
+                            id="addEquipDescription"
+                            name="description"
+                            rows="3"
+                            placeholder="Any general notes about this type of equipment..."
+                          ></textarea>
+                        </div>
+
+                        <hr class="my-3" />
+                        <h6 class="mb-3">
+                          Initial Stock (Optional - Add individual items later
+                          via 'Manage Stock')
+                        </h6>
+                        <div class="col-md-4">
+                          <label for="addEquipInitialQty" class="form-label"
+                            >Initial Quantity</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control form-control-sm"
+                            id="addEquipInitialQty"
+                            name="initial_quantity"
+                            min="0"
+                            value="0"
+                          />
+                          <div class="form-text">
+                            If > 0, enter serials below or add later.
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <label for="addEquipInitialSerials" class="form-label"
+                            >Initial Serial Numbers (Optional, one per
+                            line)</label
+                          >
+                          <textarea
+                            class="form-control form-control-sm"
+                            id="addEquipInitialSerials"
+                            name="initial_serials"
+                            rows="3"
+                            placeholder="SN001
+SN002
+SN003..."
+                          ></textarea>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-sm"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                      <button type="submit" class="btn btn-primary btn-sm">
+                        <i class="fas fa-save me-1"></i> Add Equipment Type
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
                 
                 <!--  NEW: BORROW REQUESTS VIEW   -->
                 <div id="borrow-requests-view" class="main-view" style="display: none;">
