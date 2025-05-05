@@ -1626,6 +1626,200 @@ SN003..."
                     </div>
                   </div>
 
+                    <!-- ==================== Approved/Borrowed Tab Pane ==================== -->
+                  <div
+                    class="tab-pane fade"
+                    id="approved-tab-pane"
+                    role="tabpanel"
+                    aria-labelledby="approved-tab"
+                    tabindex="0"
+                  >
+                    <h4 class="mb-3 tab-pane-title visually-hidden">
+                      Approved / Borrowed Items
+                    </h4>
+                    <!-- Filters for Approved/Borrowed -->
+                    <div class="row mb-3 gx-2 gy-2">
+                      <div class="col-md-4">
+                        <input
+                          type="text"
+                          class="form-control form-control-sm"
+                          placeholder="Search Approved/Borrowed (Student, Item)..."
+                          id="approvedSearch"
+                        />
+                      </div>
+                      <div class="col-md-3">
+                        <select
+                          class="form-select form-select-sm"
+                          id="approvedStatusFilter"
+                        >
+                          <option value="" selected>All Statuses</option>
+                          <option value="borrowed">Borrowed</option>
+                          <option value="overdue">Overdue</option>
+                        </select>
+                      </div>
+                      <!-- Add date filters if needed -->
+                    </div>
+                    <div class="table-responsive">
+                      <table
+                        class="table table-hover table-sm align-middle requests-table"
+                        id="approvedRequestsTable"
+                      >
+                        <thead class="table-light">
+                          <tr>
+                            <th scope="col">Student Name</th>
+                            <th scope="col">Item Borrowed</th>
+                            <th scope="col">Purpose</th>
+                            <th scope="col">Borrowed</th>
+                            <th scope="col">Due Date</th>
+                            <th scope="col" class="text-center">Status</th>
+                            <th scope="col" class="text-center">Actions</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <!-- Row 1 -->
+                          <tr>
+                            <td>Jelord Bojos</td>
+                            <td>#K01 A4Tech Keyboard</td>
+                            <td>Thesis Typing</td>
+                            <td>03/18/2024</td>
+                            <td>03/25/2024</td>
+                            <td class="text-center">
+                              <span class="badge text-bg-success"
+                                >Borrowed</span
+                              >
+                            </td>
+                            <td class="text-center">
+                              <div class="dropdown">
+                                <button
+                                  class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                  type="button"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <i class="fas fa-cog"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li>
+                                    <a
+                                      class="dropdown-item record-return-btn"
+                                      href="#"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#recordReturnModal"
+                                      data-borrow-id="B1"
+                                      data-item-name="#K01 A4Tech Keyboard"
+                                      data-student-name="Jelord Bojos"
+                                      ><i
+                                        class="fas fa-undo me-2 text-primary"
+                                      ></i
+                                      >Record Return</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a
+                                      class="dropdown-item notify-due-btn"
+                                      href="#"
+                                      data-borrow-id="B1"
+                                      ><i class="fas fa-bell me-2 text-info"></i
+                                      >Notify Due</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a
+                                      class="dropdown-item view-request-details-btn"
+                                      href="#"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#requestDetailsModal"
+                                      data-borrow-id="B1"
+                                      ><i
+                                        class="fas fa-eye me-2 text-secondary"
+                                      ></i
+                                      >View Details</a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                          <!-- Row 2 -->
+                          <tr>
+                            <td>Miko Zamora</td>
+                            <td>#P01 Epson Projector</td>
+                            <td>Org Event</td>
+                            <td>03/10/2024</td>
+                            <td>03/15/2024</td>
+                            <td class="text-center">
+                              <span class="badge text-bg-warning">Overdue</span>
+                            </td>
+                            <td class="text-center">
+                              <div class="dropdown">
+                                <button
+                                  class="btn btn-sm btn-outline-secondary dropdown-toggle"
+                                  type="button"
+                                  data-bs-toggle="dropdown"
+                                  aria-expanded="false"
+                                >
+                                  <i class="fas fa-cog"></i>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end">
+                                  <li>
+                                    <a
+                                      class="dropdown-item record-return-btn"
+                                      href="#"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#recordReturnModal"
+                                      data-borrow-id="B2"
+                                      data-item-name="#P01 Epson Projector"
+                                      data-student-name="Miko Zamora"
+                                      ><i
+                                        class="fas fa-undo me-2 text-primary"
+                                      ></i
+                                      >Record Return</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a
+                                      class="dropdown-item notify-overdue-btn text-danger"
+                                      href="#"
+                                      data-borrow-id="B2"
+                                      ><i class="fas fa-bell me-2"></i>Notify
+                                      Overdue</a
+                                    >
+                                  </li>
+                                  <li>
+                                    <a
+                                      class="dropdown-item view-request-details-btn"
+                                      href="#"
+                                      data-bs-toggle="modal"
+                                      data-bs-target="#requestDetailsModal"
+                                      data-borrow-id="B2"
+                                      ><i
+                                        class="fas fa-eye me-2 text-secondary"
+                                      ></i
+                                      >View Details</a
+                                    >
+                                  </li>
+                                </ul>
+                              </div>
+                            </td>
+                          </tr>
+                          <!-- Empty State Row -->
+                          <tr id="approvedEmptyRow" style="display: none">
+                            <td colspan="7" class="text-center text-muted py-3">
+                              <i class="fas fa-folder-open me-2"></i> No
+                              approved/borrowed items found.
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      <!-- Pagination for Approved/Borrowed -->
+                      <nav
+                        aria-label="Approved Requests Navigation"
+                        class="d-flex justify-content-end mt-2"
+                        id="approvedPagination"
+                      ></nav>
+                    </div>
+                  </div>
+
                     
                 <!--  END BORROW REQUESTS VIEW -->
 
