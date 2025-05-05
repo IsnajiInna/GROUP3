@@ -2515,129 +2515,75 @@ SN003..."
 
 
                 <!-- USER MANAGEMENT VIEW -->
-                <div id="user-management-view" class="main-view" style="display: none;">
-                    <div class="card content-panel">
-                        <div class="card-body">
-                            <h3 class="text-center mb-4 fw-bold form-title">User Management</h3>
-                            <div class="mb-3">
-                                <div class="input-group"> <span class="input-group-text"><i
-                                            class="fas fa-search"></i></span> <input type="text" class="form-control"
-                                        placeholder="Search users..."> </div>
-                            </div>
-                            <div class="table-responsive">
-                                <table class="table table-hover align-middle">
-                                    <thead class="table-dark-green">
-                                        <tr>
-                                            <th>Full Name</th>
-                                            <th>Email</th>
-                                            <th>Status</th>
-                                            <th>Actions</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>Nurhana Aminulla</td>
-                                            <td>na2024@wmsu.edu.ph</td>
-                                            <td><span class="badge bg-success-light text-success">Active</span></td>
-                                            <td> <button class="btn btn-sm btn-warning me-1" title="Edit"
-                                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
-                                                    data-user-id="1" data-user-name="Nurhana Aminulla"
-                                                    data-user-email="na2024@wmsu.edu.ph"><i
-                                                        class="fas fa-user-edit me-1"></i>Edit</button> <button
-                                                    class="btn btn-sm btn-info me-1" title="Deactivate"
-                                                    data-bs-toggle="modal" data-bs-target="#confirmUserStatusModal"
-                                                    data-user-id="1" data-user-name="Nurhana Aminulla"
-                                                    data-action="deactivate"><i
-                                                        class="fas fa-user-slash me-1"></i>Deactivate</button> <button
-                                                    class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal"
-                                                    data-bs-target="#confirmUserDeleteModal" data-user-id="1"
-                                                    data-user-name="Nurhana Aminulla"><i
-                                                        class="fas fa-user-times me-1"></i>Delete</button> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Jelord Bojos</td>
-                                            <td>jb2024@wmsu.edu.ph</td>
-                                            <td><span class="badge bg-success-light text-success">Active</span></td>
-                                            <td> <button class="btn btn-sm btn-warning me-1" title="Edit"
-                                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
-                                                    data-user-id="2" data-user-name="Jelord Bojos"
-                                                    data-user-email="jb2024@wmsu.edu.ph"><i
-                                                        class="fas fa-user-edit me-1"></i>Edit</button> <button
-                                                    class="btn btn-sm btn-info me-1" title="Deactivate"
-                                                    data-bs-toggle="modal" data-bs-target="#confirmUserStatusModal"
-                                                    data-user-id="2" data-user-name="Jelord Bojos"
-                                                    data-action="deactivate"><i
-                                                        class="fas fa-user-slash me-1"></i>Deactivate</button> <button
-                                                    class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal"
-                                                    data-bs-target="#confirmUserDeleteModal" data-user-id="2"
-                                                    data-user-name="Jelord Bojos"><i
-                                                        class="fas fa-user-times me-1"></i>Delete</button> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Miko Zamora</td>
-                                            <td>mz2024@wmsu.edu.ph</td>
-                                            <td><span class="badge bg-secondary-light text-secondary">Inactive</span>
-                                            </td>
-                                            <td> <button class="btn btn-sm btn-warning me-1" title="Edit"
-                                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
-                                                    data-user-id="3" data-user-name="Miko Zamora"
-                                                    data-user-email="mz2024@wmsu.edu.ph"><i
-                                                        class="fas fa-user-edit me-1"></i>Edit</button> <button
-                                                    class="btn btn-sm btn-success me-1" title="Activate"
-                                                    data-bs-toggle="modal" data-bs-target="#confirmUserStatusModal"
-                                                    data-user-id="3" data-user-name="Miko Zamora"
-                                                    data-action="activate"><i
-                                                        class="fas fa-user-check me-1"></i>Activate</button> <button
-                                                    class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal"
-                                                    data-bs-target="#confirmUserDeleteModal" data-user-id="3"
-                                                    data-user-name="Miko Zamora"><i
-                                                        class="fas fa-user-times me-1"></i>Delete</button> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Inna Isnaji</td>
-                                            <td>ii2024@wmsu.edu.ph</td>
-                                            <td><span class="badge bg-success-light text-success">Active</span></td>
-                                            <td> <button class="btn btn-sm btn-warning me-1" title="Edit"
-                                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
-                                                    data-user-id="4" data-user-name="Inna Isnaji"
-                                                    data-user-email="ii2024@wmsu.edu.ph"><i
-                                                        class="fas fa-user-edit me-1"></i>Edit</button> <button
-                                                    class="btn btn-sm btn-info me-1" title="Deactivate"
-                                                    data-bs-toggle="modal" data-bs-target="#confirmUserStatusModal"
-                                                    data-user-id="4" data-user-name="Inna Isnaji"
-                                                    data-action="deactivate"><i
-                                                        class="fas fa-user-slash me-1"></i>Deactivate</button> <button
-                                                    class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal"
-                                                    data-bs-target="#confirmUserDeleteModal" data-user-id="4"
-                                                    data-user-name="Inna Isnaji"><i
-                                                        class="fas fa-user-times me-1"></i>Delete</button> </td>
-                                        </tr>
-                                        <tr>
-                                            <td>Merson Cael</td>
-                                            <td>hz202302657@wmsu.edu.ph</td>
-                                            <td><span class="badge bg-success-light text-success">Active</span></td>
-                                            <td> <button class="btn btn-sm btn-warning me-1" title="Edit"
-                                                    data-bs-toggle="modal" data-bs-target="#editUserModal"
-                                                    data-user-id="5" data-user-name="Merson Cael"
-                                                    data-user-email="hz202302657@wmsu.edu.ph"><i
-                                                        class="fas fa-user-edit me-1"></i>Edit</button> <button
-                                                    class="btn btn-sm btn-info me-1" title="Deactivate"
-                                                    data-bs-toggle="modal" data-bs-target="#confirmUserStatusModal"
-                                                    data-user-id="5" data-user-name="Merson Cael"
-                                                    data-action="deactivate"><i
-                                                        class="fas fa-user-slash me-1"></i>Deactivate</button> <button
-                                                    class="btn btn-sm btn-danger" title="Delete" data-bs-toggle="modal"
-                                                    data-bs-target="#confirmUserDeleteModal" data-user-id="5"
-                                                    data-user-name="Merson Cael"><i
-                                                        class="fas fa-user-times me-1"></i>Delete</button> </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                <div
+            id="user-management-view"
+            class="main-view"
+            style="display: block"
+          >
+            <!-- Changed display to block for visibility -->
+            <div class="card content-panel border-0 shadow-sm">
+              <div
+                class="card-header bg-light border-bottom d-flex justify-content-between align-items-center"
+              >
+                <h4 class="mb-0 fw-bold form-title">User Management</h4>
+                <!-- ADD USER BUTTON -->
+                <button
+                  class="btn btn-primary btn-sm"
+                  data-bs-toggle="modal"
+                  data-bs-target="#addUserModal"
+                >
+                  <i class="fas fa-user-plus me-1"></i> Add New User
+                </button>
+              </div>
+              <div class="card-body">
+                <!-- Filters and Search Section -->
+                <div class="row mb-3 g-2 align-items-center">
+                  <div class="col-md-4">
+                    <div class="input-group input-group-sm">
+                      <span class="input-group-text"
+                        ><i class="fas fa-search"></i
+                      ></span>
+                      <input
+                        type="text"
+                        id="userSearchInput"
+                        class="form-control"
+                        placeholder="Search by name or email..."
+                      />
                     </div>
+                  </div>
+                  <div class="col-md-3">
+                    <select
+                      id="userStatusFilter"
+                      class="form-select form-select-sm"
+                    >
+                      <option value="" selected>All Statuses</option>
+                      <option value="active">Active</option>
+                      <option value="inactive">Inactive</option>
+                    </select>
+                  </div>
+                  <div class="col-md-3">
+                    <!-- Example: Role Filter (Add if applicable) -->
+                    <select
+                      id="userRoleFilter"
+                      class="form-select form-select-sm"
+                    >
+                      <option value="" selected>All Roles</option>
+                      <option value="admin">Admin</option>
+                      <option value="student">Student</option>
+                      <option value="faculty">Faculty</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 text-end">
+                    <button
+                      class="btn btn-secondary btn-sm"
+                      id="clearUserFilters"
+                      title="Clear Filters"
+                    >
+                      <i class="fas fa-times"></i> Clear
+                    </button>
+                  </div>
                 </div>
-
+                  
                 <!-- ACTIVITY LOG VIEW -->
                 <div id="activity-log-view" class="main-view" style="display: none;">
                     <div class="card content-panel">
