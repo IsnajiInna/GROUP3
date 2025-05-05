@@ -2849,6 +2849,146 @@ SN003..."
                     </tbody>
                   </table>
                 </div>
+
+                  <!-- Confirm User Status Change Modal (Activate/Deactivate) -->
+            <div
+              class="modal fade"
+              id="confirmUserStatusModal"
+              tabindex="-1"
+              aria-labelledby="confirmUserStatusModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-sm modal-dialog-centered">
+                <!-- Smaller modal for confirmation -->
+                <div class="modal-content">
+                  <form id="confirmUserStatusForm">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="confirmUserStatusModalLabel">
+                        Confirm Action
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Hidden inputs for ID and Action -->
+                      <input
+                        type="hidden"
+                        id="confirmStatusUserId"
+                        name="userId"
+                      />
+                      <input
+                        type="hidden"
+                        id="confirmStatusAction"
+                        name="action"
+                      />
+
+                      <p>
+                        Are you sure you want to
+                        <strong id="statusActionVerb"></strong> the user
+                        <strong id="confirmStatusUserName"></strong>?
+                      </p>
+                      <!-- Example: Add reason field for deactivation -->
+                      <div
+                        id="deactivationReasonGroup"
+                        class="mb-3"
+                        style="display: none"
+                      >
+                        <label for="deactivationReason" class="form-label"
+                          >Reason (Optional)</label
+                        >
+                        <textarea
+                          class="form-control form-control-sm"
+                          id="deactivationReason"
+                          name="reason"
+                          rows="2"
+                        ></textarea>
+                      </div>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-sm"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                      <button
+                        type="submit"
+                        class="btn btn-sm"
+                        id="confirmStatusActionButton"
+                      >
+                        <!-- JS will set text and class (e.g., btn-success/btn-info) -->
+                        Confirm Action
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Confirm User Delete Modal -->
+            <div
+              class="modal fade"
+              id="confirmUserDeleteModal"
+              tabindex="-1"
+              aria-labelledby="confirmUserDeleteModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-sm modal-dialog-centered">
+                <!-- Smaller modal -->
+                <div class="modal-content">
+                  <form id="confirmUserDeleteForm">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="confirmUserDeleteModalLabel">
+                        <i
+                          class="fas fa-exclamation-triangle text-danger me-2"
+                        ></i
+                        >Confirm Deletion
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <!-- Hidden input for ID -->
+                      <input
+                        type="hidden"
+                        id="confirmDeleteUserId"
+                        name="userId"
+                      />
+
+                      <p>
+                        Are you sure you want to permanently delete the user
+                        <strong id="confirmDeleteUserName"></strong>?
+                      </p>
+                      <p class="text-danger">
+                        <small>This action cannot be undone.</small>
+                      </p>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary btn-sm"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                      <button type="submit" class="btn btn-danger btn-sm">
+                        <i class="fas fa-trash-alt me-1"></i> Delete User
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
                   
                 <!-- ACTIVITY LOG VIEW -->
                 <div id="activity-log-view" class="main-view" style="display: none;">
